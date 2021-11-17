@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Airpush in Libgdx - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Airpush in Libgdx">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/airpush-in-libgdx">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/airpush-in-libgdx">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Airpush in Libgdx
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/airpush-in-libgdx.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <h1 id="summary">Summary</h1>
+
+<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#step-1-choose-sdk-">Step 1. Choose SDK.</a></li>
+  <li><a href="#step-2-create-app-in-airpush-dashboard-">Step 2. Create App in Airpush Dashboard.</a></li>
+  <li><a href="#step-3-add-google-play-services-library-">Step 3. Add Google Play Services Library.</a></li>
+  <li><a href="#step-4-adding-the-airpush-sdk-">Step 4. Adding the Airpush SDK.</a></li>
+  <li><a href="#step-5-editing-the-android-manifest-">Step 5. Editing the Android Manifest.</a></li>
+  <li><a href="#step-6-adding-dem-codes-">Step 6. Adding dem Codes.</a></li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>This tutorial will guide you for all the steps to add Airpush adds in your libGDX Powered Android Games. You will be able to add both Banner Ads, and Smartwall Ads. The basic structure is very like the <a href="https://github.com/libgdx/libgdx/wiki/Admob-in-libgdx" rel="external">Admob Tutorial<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. But there are several changes and it will be more straight forward with not much text. (If you want a very detailed explanation of why every step, feel free to read that tutorial first).</p>
+
+<p>You need:</p>
+
+<ol>
+  <li>A libGDX Powered Android Game Project.</li>
+  <li>And <a href="http://www.airpush.com/" rel="external">Airpush<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> Account.</li>
+</ol>
+
+<h1 id="step-1-choose-sdk-">Step 1. Choose SDK.-</h1>
+
+<p>Airpush has 2 SDKs that you will be able to use in Google Play. Standard and Bundle. Both have advantages and flaws.</p>
+
+<p><strong>Bundle.-</strong></p>
+
+<p>Supports less devices than Standard (around 15% less), but pays you for each install of your app in which the user accepts the EULA additional to Ad clicks.</p>
+
+<p><strong>Standard.-</strong></p>
+
+<p>Support the most devices, but won’t pay you for users accepting the EULA. Only Ad clicks.</p>
+
+<p>This tutorial will cover the 2 SDKs, any differences in their implementation will be noted.</p>
+
+<p>What SDK do I recommend?. Well I use both, I make an app that implements the standard SDK with certain Version Number, lets say 1. And then I implement the Bundle and make that with a higher Version Number, lets say 2. Then I upload the 2 APKs in the same app in Google Play Console (they have same package name, don’t be confused). Then Google Play automatically will install the Bundle version if supported or the Standard if not supported. The reason Bundle support less devices is because required permissions.</p>
+
+<h1 id="step-2-create-app-in-airpush-dashboard-">Step 2. Create App in Airpush Dashboard.-</h1>
+
+<p>Log in to your Airpush Account, you will be taken to the Dashboard. Click the Add Application button left of the screen.</p>
+
+<p><img src="/assets/wiki/images/aptuto1.png" alt="images/aptuto1.png"></p>
+
+<p>Fill all the fields in the first tab and Click Continue. Don’t worry if you haven’t uploaded your app to Google Play yet, just put your package name there and it will be automatically checked when its up. But try not to take more than 48 hours to publish it.</p>
+
+<p><img src="/assets/wiki/images/aptuto4.png" alt="images/aptuto4.png"></p>
+
+<p>In the next tab, uncheck Push Notification ads, and Icon Ads, you don’t need those and also they don’t complain with Google Play policies. You will be using Standard or Bundle SDK or both, and they don’t use them. Check SmartWall Ads, and Banner Ads. Also you can check “Exclude dating campaigns” if you don’t want your users to see sexually suggestive ads (I always check it).</p>
+
+<p><img src="/assets/wiki/images/aptuto2.png" alt="images/aptuto2.png"></p>
+
+<p>Back in the Dashboard save your API Key and Your App ID. You will need these later.</p>
+
+<p><img src="/assets/wiki/images/aptuto3.png" alt="images/aptuto3.png"></p>
+
+<h1 id="step-3-add-google-play-services-library-">Step 3. Add Google Play Services Library.-</h1>
+
+<p>You must import Google Play Services Library and link it to your Android libGDX Project.</p>
+
+<p>First of all, install/update it. Open Android SDK Manager and install Google Play Services under Extras.</p>
+
+<p><img src="/assets/wiki/images/aptuto5.png" alt="images/aptuto5.png"></p>
+
+<p>Now go to your Android SDK Installation ‘Folder -&gt; extras -&gt; google -&gt; google_play_services -&gt; libproject’ and copy “google-play-services_lib” folder to your workspace.</p>
+
+<p>Now, import the project like this in eclipse: ‘File -&gt; import… -&gt; Android -&gt; Existing Android Code Into Workspace’. You will end up with something like this:</p>
+
+<p><img src="/assets/wiki/images/aptuto6.png" alt="images/aptuto6.png"></p>
+
+<p>Right click the Android Project, go to ‘Properties -&gt; Android’ and scroll down. Click the “Add…” button and choose the services project. Will end up like this:</p>
+
+<p><img src="/assets/wiki/images/aptuto7.png" alt="images/aptuto7.png"></p>
+
+<h1 id="step-4-adding-the-airpush-sdk-">Step 4. Adding the Airpush SDK.-</h1>
+
+<p>Go to the Airpush Dashboard and download your SDK. Standard or Bundle. Now this is where gets tricky, every developer has a different SDK name and also SDK packages. So you must be aware you have to change these values when you are implementing them.</p>
+
+<p>Unzip the rar. And copy “mraid_attrs.xml” to your Android Project ‘res- &gt; values’ folder. And copy the .jar file to your Android Project ‘libs’ folder.</p>
+
+<p>Right click your Android Project and choose ‘Properties -&gt; Java Build Path’, go to ‘Libraries’ tab. And click ‘Add JARs’. Choose the ‘android project -&gt; libs -&gt; airpushsdk.jar’ (remember it has a different name for each developer). Now also add the Goggle Play Services jar, because even if its added as a library, android won’t export the jar. click ‘Add JARs’ again, go to ‘services project -&gt; libs -&gt; google-play-services.jar’.</p>
+
+<p>Switch to the ‘Order and Export’ tab and be sure to check both new jars. Will end up like this:</p>
+
+<p><img src="/assets/wiki/images/aptuto8.png" alt="images/aptuto8.png"></p>
+
+<p>Click Ok to finish.</p>
+
+<h1 id="step-5-editing-the-android-manifest-">Step 5. Editing the Android Manifest.-</h1>
+
+<p>Ad the following to your Android Manifest. Be aware this is different for Standard and Bundle SDKs.-</p>
+
+<p><strong>Standard.-</strong></p>
+
+<p>Permissions.-</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.INTERNET"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.READ_PHONE_STATE"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.WRITE_EXTERNAL_STORAGE"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<p>Activity declarations.-</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">data</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.google.android.gms.version"</span> <span class="nl">android:</span><span class="n">value</span><span class="o">=</span><span class="s">"@integer/google_play_services_version"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">data</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.APPID"</span> <span class="nl">android:</span><span class="n">value</span><span class="o">=</span><span class="s">"&lt;Your appId&gt;"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">data</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.APIKEY"</span> <span class="nl">android:</span><span class="n">value</span><span class="o">=</span><span class="s">"android*&lt;Your ApiKey&gt;"</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">activity</span> <span class="nl">android:</span><span class="n">exported</span><span class="o">=</span><span class="s">"false"</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.MainActivity"</span>
+     <span class="nl">android:</span><span class="n">configChanges</span><span class="o">=</span><span class="s">"orientation|screenSize"</span>
+<span class="nl">android:</span><span class="n">theme</span><span class="o">=</span><span class="s">"@android:style/Theme.Translucent"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">activity</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.BrowserActivity"</span>
+<span class="nl">android:</span><span class="n">configChanges</span><span class="o">=</span><span class="s">"orientation|screenSize"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">activity</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.VDActivity"</span>
+            <span class="nl">android:</span><span class="n">configChanges</span><span class="o">=</span><span class="s">"orientation|screenSize"</span> <span class="nl">android:</span><span class="n">screenOrientation</span><span class="o">=</span><span class="s">"landscape"</span>
+            <span class="nl">android:</span><span class="n">theme</span><span class="o">=</span><span class="s">"@android:style/Theme.NoTitleBar.Fullscreen"</span> <span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">activity</span><span class="o">&gt;</span> 
+</code></pre></div></div>
+
+<p><strong>Bundle.-</strong></p>
+
+<p>Permissions.-</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.INTERNET"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.ACCESS_NETWORK_STATE"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.READ_PHONE_STATE"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.android.browser.permission.READ_HISTORY_BOOKMARKS"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.GET_ACCOUNTS"</span> <span class="o">/&gt;</span>    
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.ACCESS_COARSE_LOCATION"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.ACCESS_FINE_LOCATION"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.RECEIVE_BOOT_COMPLETED"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.permission.WRITE_EXTERNAL_STORAGE"</span> <span class="o">/&gt;</span>
+</code></pre></div></div>
+<p>(see why it supports less devices).</p>
+
+<p>Activity declarations.-</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">data</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.google.android.gms.version"</span> <span class="nl">android:</span><span class="n">value</span><span class="o">=</span><span class="s">"@integer/google_play_services_version"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">data</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.APPID"</span> <span class="nl">android:</span><span class="n">value</span><span class="o">=</span><span class="s">"&lt;Your appId&gt;"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span><span class="o">-</span><span class="n">data</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.APIKEY"</span> <span class="nl">android:</span><span class="n">value</span><span class="o">=</span><span class="s">"android*&lt;Your ApiKey&gt;"</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">activity</span> <span class="nl">android:</span><span class="n">exported</span><span class="o">=</span><span class="s">"false"</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.AdActivity"</span>
+     <span class="nl">android:</span><span class="n">configChanges</span><span class="o">=</span><span class="s">"orientation|screenSize"</span>
+<span class="nl">android:</span><span class="n">theme</span><span class="o">=</span><span class="s">"@android:style/Theme.Translucent"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">activity</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.BrowserActivity"</span>
+<span class="nl">android:</span><span class="n">configChanges</span><span class="o">=</span><span class="s">"orientation|screenSize"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="n">activity</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.VActivity"</span>
+            <span class="nl">android:</span><span class="n">configChanges</span><span class="o">=</span><span class="s">"orientation|screenSize"</span> <span class="nl">android:</span><span class="n">screenOrientation</span><span class="o">=</span><span class="s">"landscape"</span>
+            <span class="nl">android:</span><span class="n">theme</span><span class="o">=</span><span class="s">"@android:style/Theme.NoTitleBar.Fullscreen"</span> <span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">activity</span><span class="o">&gt;</span> 
+ <span class="o">&lt;</span><span class="n">service</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.LService"</span> <span class="nl">android:</span><span class="n">exported</span><span class="o">=</span><span class="s">"false"</span><span class="o">&gt;&lt;/</span><span class="n">service</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="n">receiver</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"com.&lt;sdkpackage&gt;.BootReceiver"</span> <span class="nl">android:</span><span class="n">exported</span><span class="o">=</span><span class="s">"false"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">intent</span><span class="o">-</span><span class="n">filter</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">action</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.intent.action.BOOT_COMPLETED"</span> <span class="o">/&gt;</span>
+                <span class="o">&lt;/</span><span class="n">intent</span><span class="o">-</span><span class="n">filter</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">receiver</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>Don’t forget to change your <code class="language-plaintext highlighter-rouge">&lt;sdkpackage&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;Your ApiKey&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;Your appId&gt;</code> for your unique values. Also, your min sdk version must be set to 9 or higer.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">sdk</span> <span class="nl">android:</span><span class="n">minSdkVersion</span><span class="o">=</span><span class="s">"9"</span> <span class="nl">android:</span><span class="n">targetSdkVersion</span><span class="o">=</span><span class="s">"19"</span><span class="o">/&gt;</span>
+</code></pre></div></div>
+
+<h1 id="step-6-adding-dem-codes-">Step 6. Adding dem Codes.-</h1>
+
+<p>First make an Interface in your core project called “ActionResolver”. And add the following 2 methods.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ActionResolver</span> <span class="o">{</span>
+	   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showAds</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">show</span><span class="o">);</span>
+	   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startSmartWallAd</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Make your ApplicationListener receive an ActionResolver when created as a parameter. Like this:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TheMonsterFree</span> <span class="kd">extends</span> <span class="nc">Game</span><span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nc">ActionResolver</span> <span class="n">ar</span><span class="o">;</span>
+	
+    <span class="kd">public</span> <span class="nf">TheMonsterFree</span><span class="o">(</span><span class="nc">ActionResolver</span> <span class="n">ar</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">ar</span> <span class="o">=</span> <span class="n">ar</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>You will notice errors in your platform projects, because they aren’t sending an Action Resolver already. Make the Desktop and the HTML project send it. Like this:</p>
+
+<p><strong>Desktop.-</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">LwjglApplicationConfiguration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LwjglApplicationConfiguration</span><span class="o">();</span>
+		<span class="n">cfg</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="s">"TheMonsterFree"</span><span class="o">;</span>
+		<span class="n">cfg</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="mi">480</span><span class="o">;</span>
+		<span class="n">cfg</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="mi">320</span><span class="o">;</span>
+		
+		<span class="k">new</span> <span class="nf">LwjglApplication</span><span class="o">(</span><span class="k">new</span> <span class="nc">TheMonsterFree</span><span class="o">(</span><span class="k">new</span> <span class="nc">ActionResolver</span><span class="o">(){</span>
+			<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startSmartWallAd</span><span class="o">(){}</span>
+			<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showAds</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">show</span><span class="o">){}</span>
+		<span class="o">}),</span> <span class="n">cfg</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>HTML.-</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GwtLauncher</span> <span class="kd">extends</span> <span class="nc">GwtApplication</span> <span class="kd">implements</span> <span class="nc">ActionResolver</span><span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="nc">GwtApplicationConfiguration</span> <span class="nf">getConfig</span><span class="o">(){</span>
+		<span class="nc">GwtApplicationConfiguration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GwtApplicationConfiguration</span><span class="o">(</span><span class="mi">480</span><span class="o">,</span> <span class="mi">320</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">cfg</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="nc">ApplicationListener</span> <span class="nf">getApplicationListener</span><span class="o">(){</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">TheMonsterFree</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showAds</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">show</span><span class="o">){}</span>
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startSmartWallAd</span><span class="o">(){}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>They have an empty implementation as Airpush only supports ads in Android. Add this to your Android MainActivity.java:</p>
+
+<p><strong>Android.-</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="nc">AndroidApplication</span> <span class="kd">implements</span> <span class="nc">ActionResolver</span><span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="o">){</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        
+        <span class="nc">AndroidApplicationConfiguration</span> <span class="n">cfg</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AndroidApplicationConfiguration</span><span class="o">();</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="na">useWakelock</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="na">useAccelerometer</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="n">cfg</span><span class="o">.</span><span class="na">useCompass</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        
+      	<span class="k">if</span><span class="o">(</span><span class="n">ma</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">ma</span><span class="o">=</span><span class="k">new</span> <span class="nc">Prm</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">adCallbackListener</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+      			
+		<span class="nc">RelativeLayout</span> <span class="n">layout</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RelativeLayout</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+		<span class="n">requestWindowFeature</span><span class="o">(</span><span class="nc">Window</span><span class="o">.</span><span class="na">FEATURE_NO_TITLE</span><span class="o">);</span>
+		<span class="n">getWindow</span><span class="o">().</span><span class="na">setFlags</span><span class="o">(</span><span class="nc">WindowManager</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">FLAG_FULLSCREEN</span><span class="o">,</span> <span class="nc">WindowManager</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">FLAG_FULLSCREEN</span><span class="o">);</span>
+		<span class="n">getWindow</span><span class="o">().</span><span class="na">clearFlags</span><span class="o">(</span><span class="nc">WindowManager</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">FLAG_FORCE_NOT_FULLSCREEN</span><span class="o">);</span>
+
+		<span class="nc">View</span> <span class="n">gameView</span> <span class="o">=</span> <span class="n">initializeForView</span><span class="o">(</span><span class="k">new</span> <span class="nc">TheMonsterFree</span><span class="o">(</span><span class="k">this</span><span class="o">),</span> <span class="n">cfg</span><span class="o">);</span>
+		
+		<span class="nc">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">adParams</span> <span class="o">=</span> <span class="k">new</span>
+		<span class="nc">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">(</span><span class="nc">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">WRAP_CONTENT</span><span class="o">,</span> <span class="nc">RelativeLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">.</span><span class="na">WRAP_CONTENT</span><span class="o">);</span>
+		<span class="n">adParams</span><span class="o">.</span><span class="na">addRule</span><span class="o">(</span><span class="nc">RelativeLayout</span><span class="o">.</span><span class="na">ALIGN_PARENT_TOP</span><span class="o">);</span>
+		<span class="n">adParams</span><span class="o">.</span><span class="na">addRule</span><span class="o">(</span><span class="nc">RelativeLayout</span><span class="o">.</span><span class="na">ALIGN_PARENT_LEFT</span><span class="o">);</span>
+		 
+		<span class="n">adView</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AdView</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="nc">AdView</span><span class="o">.</span><span class="na">BANNER_TYPE_IN_APP_AD</span><span class="o">,</span> <span class="nc">AdView</span><span class="o">.</span><span class="na">PLACEMENT_TYPE_INTERSTITIAL</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> 
+				<span class="nc">AdView</span><span class="o">.</span><span class="na">ANIMATION_TYPE_LEFT_TO_RIGHT</span><span class="o">);</span>
+		<span class="n">adView</span><span class="o">.</span><span class="na">setAdListener</span><span class="o">(</span><span class="n">adlistener</span><span class="o">);</span>
+		
+		<span class="n">layout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">gameView</span><span class="o">);</span>
+		<span class="n">layout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">adView</span><span class="o">);</span>
+		<span class="n">setContentView</span><span class="o">(</span><span class="n">layout</span><span class="o">);</span>
+    <span class="o">}</span>
+	
+    <span class="nc">AdListener</span> <span class="n">adCallbackListener</span><span class="o">=</span><span class="k">new</span> <span class="nc">AdListener</span><span class="o">(){</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSDKIntegrationError</span><span class="o">(</span><span class="nc">String</span> <span class="n">message</span><span class="o">){</span>
+        	<span class="c1">//Here you will receive message from SDK if it detects any integration issue.</span>
+			<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onSDKIntegrationError() "</span><span class="o">+</span><span class="n">message</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSmartWallAdShowing</span><span class="o">(){</span>
+        	<span class="c1">// This will be called by SDK when it's showing any of the SmartWall ad.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onSmartWallAdShowing()"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSmartWallAdClosed</span><span class="o">(){</span>
+        	<span class="c1">// This will be called by SDK when the SmartWall ad is closed.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onSmartWallAdClosed()"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdError</span><span class="o">(</span><span class="nc">String</span> <span class="n">message</span><span class="o">){</span>
+        	<span class="c1">//This will get called if any error occurred during ad serving.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onAdError() "</span><span class="o">+</span><span class="n">message</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdCached</span><span class="o">(</span><span class="nc">AdType</span> <span class="n">arg0</span><span class="o">){</span>
+        	<span class="c1">//This will get called when an ad is cached. </span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onAdCached() "</span><span class="o">+</span><span class="n">arg0</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+		<span class="o">}</span>
+		<span class="nd">@Override</span>
+		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">noAdAvailableListener</span><span class="o">(){</span> 
+			<span class="c1">//this will get called when ad is not available </span>
+			<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"noAdAvailableListener()"</span><span class="o">);</span>
+		<span class="o">}</span>
+     <span class="o">};</span>
+
+     <span class="nc">AdListener</span><span class="o">.</span><span class="na">BannerAdListener</span> <span class="n">adlistener</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AdListener</span><span class="o">.</span><span class="na">BannerAdListener</span><span class="o">(){</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdClickListener</span><span class="o">(){</span>
+        	<span class="c1">//This will get called when ad is clicked.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onAdClickListener()"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdLoadedListener</span><span class="o">(){</span>
+        	<span class="c1">//This will get called when an ad has loaded.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onAdLoadedListener()"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdLoadingListener</span><span class="o">(){</span>
+        	<span class="c1">//This will get called when a rich media ad is loading.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onAdLoadingListener()"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAdExpandedListner</span><span class="o">(){</span>
+        	<span class="c1">//This will get called when an ad is showing on a user's screen. This may cover the whole UI.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onAdExpandedListner()"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCloseListener</span><span class="o">(){</span>
+        	<span class="c1">//This will get called when an ad is closing/resizing from an expanded state.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"onCloseListener()"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onErrorListener</span><span class="o">(</span><span class="nc">String</span> <span class="n">message</span><span class="o">){</span>
+        	<span class="c1">//This will get called when any error has occurred. This will also get called if the SDK notices any integration mistakes.</span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">noAdAvailableListener</span><span class="o">(){</span>
+        	<span class="c1">//this will get called when ad is not available </span>
+        	<span class="nc">Log</span><span class="o">.</span><span class="na">w</span><span class="o">(</span><span class="s">"Airpush"</span><span class="o">,</span> <span class="s">"noAdAvailableListener()"</span><span class="o">);</span>
+	   	<span class="o">}</span>
+    <span class="o">};</span>
+	
+	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">SHOW_ADS</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">HIDE_ADS</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+	<span class="nc">Prm</span> <span class="n">ma</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+	<span class="nc">AdView</span> <span class="n">adView</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+	<span class="kd">protected</span> <span class="nc">Handler</span> <span class="n">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Handler</span><span class="o">(</span><span class="nc">Looper</span><span class="o">.</span><span class="na">getMainLooper</span><span class="o">()){</span>
+		<span class="nd">@Override</span>
+		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="nc">Message</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">switch</span> <span class="o">(</span><span class="n">msg</span><span class="o">.</span><span class="na">what</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">case</span> <span class="nl">SHOW_ADS:</span> <span class="o">{</span>
+				<span class="k">if</span> <span class="o">(</span><span class="n">adView</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">adView</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="nc">View</span><span class="o">.</span><span class="na">VISIBLE</span><span class="o">);</span>
+				<span class="k">break</span><span class="o">;</span>
+			<span class="o">}</span>
+			<span class="k">case</span> <span class="nl">HIDE_ADS:</span> <span class="o">{</span>
+				<span class="k">if</span> <span class="o">(</span><span class="n">adView</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">adView</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="nc">View</span><span class="o">.</span><span class="na">GONE</span><span class="o">);</span>
+				<span class="k">break</span><span class="o">;</span>
+			<span class="o">}</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">};</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">showAds</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">show</span><span class="o">){</span>
+		<span class="n">handler</span><span class="o">.</span><span class="na">sendEmptyMessage</span><span class="o">(</span><span class="n">show</span> <span class="o">?</span> <span class="no">SHOW_ADS</span> <span class="o">:</span> <span class="no">HIDE_ADS</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">startSmartWallAd</span><span class="o">(){</span>
+	    <span class="k">if</span> <span class="o">(</span><span class="n">ma</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="n">ma</span><span class="o">.</span><span class="na">runAppWall</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>For the SmartWall ads you have several options:</p>
+
+<ul>
+  <li>Overlay Dialog Ad: <code class="language-plaintext highlighter-rouge">ma.runOverlayAd();</code>
+</li>
+  <li>AppWall Ad: <code class="language-plaintext highlighter-rouge">ma.runAppWall();</code>
+</li>
+  <li>Rich Media Interstitial Ad: <code class="language-plaintext highlighter-rouge">ma.displayRichMediaInterstitialAd();</code>
+</li>
+  <li>Video Ad: <code class="language-plaintext highlighter-rouge">ma.runVideoAd();</code>
+</li>
+  <li>And Landing Page Ad: <code class="language-plaintext highlighter-rouge">ma.callLandingPageAd();</code> only for Bundle.</li>
+</ul>
+
+<p>And you can even do <code class="language-plaintext highlighter-rouge">ma.callSmartWallAd();</code> and let the server decide for you. I recommend using AppWall as thats the one with better results.</p>
+
+<p>Btw that above is for <strong>Standard SDK</strong>. If you are using <strong>Bundle</strong> you have to make these changes:</p>
+
+<ol>
+  <li>Replace <code class="language-plaintext highlighter-rouge">ma.runAppWall();</code>
+for <code class="language-plaintext highlighter-rouge">ma.callAppWall();</code>
+</li>
+  <li>Replace <code class="language-plaintext highlighter-rouge">AdListener.BannerAdListener adlistener = new AdListener.BannerAdListener(){</code>
+for <code class="language-plaintext highlighter-rouge">AdListener.MraidAdListener adlistener = new AdListener.MraidAdListener(){</code>
+</li>
+  <li>Replace all <code class="language-plaintext highlighter-rouge">Prm</code> for <code class="language-plaintext highlighter-rouge">MA</code>
+</li>
+</ol>
+
+<p>Do <code class="language-plaintext highlighter-rouge">Ctrl+ Shift + O</code> for the correct imports to update.</p>
+
+<p>Thats it, now inside your core project you can show Banner ads like this:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ar</span><span class="o">.</span><span class="na">showAds</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</code></pre></div></div>
+<p>Hide Banner ads like this:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ar</span><span class="o">.</span><span class="na">showAds</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
+<p>And Call SmartWall ads like this:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ar</span><span class="o">.</span><span class="na">startSmartWallAd</span><span class="o">();</span>
+</code></pre></div></div>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

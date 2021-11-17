@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Google Summer of Code 2014 - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Google Summer of Code 2014">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/google-summer-of-code-2014">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/google-summer-of-code-2014">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Google Summer of Code 2014
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/google-summer-of-code-2014.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <p>FIXME out of date. This page is mostly an <a href="https://en.wikipedia.org/wiki/Request_for_Comments" rel="external">RFC<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p>This page is mostly a copy-paste of the GSoC2013 page on the old Google Code wiki. The mentor list is not here, I might just make a section here for it.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>We assume you already know what Google Summer of Code is, if not, please check out the <a href="http://www.google-melange.com/gsoc/homepage/google/gsoc2013" rel="external">Google Summer of Code<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> site for general information.</p>
+
+<p>For <strong>students</strong>, we recommend to read up on what libGDX is, then proceed to the <a href="google-summer-of-code-2014#Information_for_Students">Information For Students</a> section.</p>
+
+<p><em>Mentors</em> must read the <a href="google-summer-of-code-2014#Information_for_Mentors">Information for Mentors</a>  section, add themselves to existing ideas in the list below, and optionally create and add new ideas.</p>
+
+<h2 id="what-is-libgdx">What is libGDX?</h2>
+
+<p><a href="http://libgdx.badlogicgames.com">libGDX</a> is a cross-platform game development framework. You write your game in Java, and have it working instantly on Windows, Linux, Mac, <a href="http://store.steampowered.com/app/207710" rel="external">Steam<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://play.google.com/store/apps/details?id=com.moistrue.zombiesmasher" rel="external">Android<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://itunes.apple.com/ph/app/clash-of-the-olympians/id590049663?mt=8" rel="external">iOS<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://www.facebook.com/stargazergame" rel="external">Facebook<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> and HTML/WebGL. The entire Java code base is shared across all these platforms. You can find more information on libGDX’s feature set <a href="http://libgdx.badlogicgames.com/features.html">here</a>.</p>
+
+<p>libGDX was born 3 years ago, out of a desire to target multiple platforms with a single code base. It has since grown into a big OSS project with over <a href="http://www.ohloh.net/p/libgdx" rel="external">100 professional and amateur contributors<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, and is used by thousands of developers to create the games of their dreams. From <a href="http://www.ludumdare.com/compo/author/bompo/" rel="external">entries<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> for the 48 hour <a href="http://www.ludumdare.com/" rel="external">Ludum Dare<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> challenge, to <a href="https://play.google.com/store/apps/details?id=com.bithack.apparatus&amp;feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5iaXRoYWNrLmFwcGFyYXR1cyJd" rel="external">top grossing mobile games<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> to augmented reality experiments like <a href="https://play.google.com/store/apps/details?id=com.nianticproject.ingress&amp;feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5uaWFudGljcHJvamVjdC5pbmdyZXNzIl0" rel="external">Google’s Ingress<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<p>libGDX has achieved wide adoption, especially on Android where it is powering <a href="http://www.appbrain.com/stats/libraries/details/libgdx/libgdx" rel="external">3.2% of all installed applications<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, with numerous top-grossing games. On that platform it can already compete with Unity3D.</p>
+
+<p>Our <a href="/wiki/community-&amp;-support">Community</a> as well as the entire libGDX development team are looking forward to welcome you among us. Contribute to powering thousands of applications and bringing joy to millions of users!</p>
+
+<h2 id="information-for-students">Information for Students</h2>
+<p>As a student you may ask yourself why you should take part in libGDX’s Google Summer of Code effort. Here we try to give you some food for thought that may help you decide whether you want to apply for our project.</p>
+
+<p>libGDX offers students to explore a wide range of technologies:</p>
+
+<ul>
+  <li>Different operating systems, platforms  and hardware (desktop, Android, iOS, HTML5/WebGL)</li>
+  <li>Different languages (C, C++, Java, C#, Javascript)</li>
+  <li>Different fields of software development (data structures, 2D &amp; 3D graphics, audio, peripheral  communication, etc.)</li>
+</ul>
+
+<p>Such broad environments are usually rare to find in many university settings.</p>
+
+<p>You will work in a globally distributed team, a setup that is becoming more common. You’ll learn how to deal with the difficulties that arise in communication in such environments. Different time zones, different language skills (English is our lingua franca, but not everyone is a native speaker), miscommunication arising from limited expressiveness of text and so shapes how the team functions.</p>
+
+<p>libGDX is an industrial strength framework used in production. It is employed in thousands of games that are played by millions of users every day. Modifying libgdx’s code means taking responsibility, and considering the impact it has on all the applications that are build on top of it. Big changes need to be discussed with the team, learning how to put forward a solid argument is crucial.</p>
+
+<p>Finally, and maybe most importantly, libGDX means games. Many of the libGDX team members got into programming due to a desire to write games. If you want to improve your skillset while working within the game development field, then libGDX is for you.</p>
+
+<h3 id="steps">Steps</h3>
+<p>The ideas below have been compiled by the libGDX contributors and community. If you want to pick any of those for your proposal, or come up with your own idea, it’s best to get to know libGDX and the backing technologies before starting with your proposal. That let’s you better estimate what is needed to finish a specific project. If you plan on applying for libGDX for your GSoC project you should follow these steps:</p>
+
+<ol>
+  <li>Fork the project on <a href="https://www.github.com/libgdx/libgdx" rel="external">Github<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</li>
+  <li>Get familiar on how to work with <a href="/wiki/running-demos-&amp;-tests">libgdx’s source</a>.</li>
+  <li>Register on the forums and introduce yourself. Drop by on IRC (#libgdx, irc.freenode.org), get to know the community. <a href="https://web.archive.org/web/20200928221625/https://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=7889">This forum thread</a> is where most of the GSoC students introduced themselves so far, make sure to subscribe to it to receive notifications for new messages. The subscribe button is at the bottom of the page.</li>
+  <li>Pick one of the project ideas below or come up with your own. Prepare your application using our [student application template] (FIXME (todo)). You’ll have to submit this application via the <a href="http://www.google-melange.com/" rel="external">Google Summer of Code 2013 site<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, from April 22 - May 3, 2013. You’ll also need to sign the <a href="http://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/student_agreement" rel="external">Student Participation Agreement<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. For more information on the process, read the <a href="http://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/help_page" rel="external">GSoC FAQ<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. Reading it is mandatory!</li>
+  <li>Get in contact with the mentors listed below, on IRC (irc.freenode.org, #libgdx) or the forums. Our mentors introduce themselves on this <a href="GoogleSummerOfCode2013Mentors">Wiki page</a> (FIXME (todo)).</li>
+  <li>Send a pull request for some issue or improvement you made to libGDX on Github, note that in your application. When selecting students, we’ll favor those that already demonstrated that they can interact with our community and read the docs on <a href="/wiki/contributing">how to contribute</a>
+</li>
+</ol>
+
+<h2 id="information-for-mentors">Information for Mentors</h2>
+<p>Since mentors have quite a bit of responsibility, I (badlogic) would want to limit potential mentors to the group of contributors. Exceptions to this rule may be made of course. Nex and I take on the project administrator role, which is different to that of a mentor.</p>
+
+<p>Mentoring means commitment, once you agree to be a mentor, there’s no way back after we submit the application to GSoC.</p>
+
+<h3 id="steps-1">Steps</h3>
+<ol>
+  <li>Drop me (badlogic) an e-mail</li>
+  <li>Improve or add new ideas to the list below</li>
+  <li>Read the <a href="http://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/help_page" rel="external">GSoC FAQ<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, which explains all the obligations of a mentor.</li>
+  <li>Read the <a href="http://en.flossmanuals.net/GSoCMentoring/" rel="external">GSoC Mentor Handbook<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> which provides guidance on how to approach mentoring</li>
+  <li>We organize our mentor activity on <a href="https://web.archive.org/web/20150920202444/http://www.badlogicgames.com/forum/viewtopic.php?f=23&amp;t=8113">this thread</a>. Subscribe to it, the subscription button is at the bottom of the page.</li>
+  <li>Look out for students on the forum and on IRC, welcome them to the community and show them around</li>
+</ol>
+
+<h2 id="idea-list-guidelines">Idea List Guidelines</h2>
+<p>Please use the following format for ideas:</p>
+
+<ul>
+  <li>
+<strong>Title</strong> use <code class="language-plaintext highlighter-rouge">### Project: Title ###</code>
+</li>
+  <li>
+<strong>Goals:</strong> keep it short, can be vague</li>
+  <li>
+<strong>Required Skills:</strong> language, platforms, etc.</li>
+  <li>
+<strong>Links:</strong> further information, forum threads, etc.</li>
+  <li>
+<strong>Potential Mentors:</strong> contributors only</li>
+</ul>
+
+<p>If you are not a contributor, post your idea in <a href="https://web.archive.org/web/20200928221625/https://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=7889">this thread</a> (FIXME (todo))</p>
+
+<p>Please add <code class="language-plaintext highlighter-rouge">----</code> after each idea as a separator.</p>
+
+<h2 id="ideas">Ideas</h2>
+
+<h3 id="project-in-app-purchase-extension">Project: In-app Purchase Extension</h3>
+<p><strong>Goals</strong>: create a libGDX extension that allows to incorporate in-app purchases across as many platforms as possible. iOS and Android are a must, GWT/desktop would be a nice to have.</p>
+
+<p><strong>Required Skills</strong>: Java, C#, basic iOS knowledge (bonus if you know Xamarin.iOS), basic Android knowledge (FIXME (xamarin -&gt; robovm))</p>
+
+<p><strong>Links</strong>: https://github.com/libgdx/libgdx/pull/146 API draft by a core contributor</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Noblemaster" rel="external">noblemaster<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Tamas" rel="external">tamas<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-social-network-extension">Project: Social Network Extension</h3>
+<p><strong>Goals</strong>: create a libGDX extension that allows to incorporate social network interactions, e.g. get friend lists. Ideally this should work across all platforms (desktop, GWT, Android, IOS).</p>
+
+<p><strong>Required Skills</strong>: Java, C#, basic iOS knowledge (bonus if you know Xamarin.iOS), basic Android knowledge (FIXME (xamarin -&gt; robovm))</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nexsoftware" rel="external">nex<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Tamas" rel="external">tamas<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-robovmios-backend">Project: RoboVM/iOS backend</h3>
+
+<p>(FIXME done?)
+<strong>Goals</strong>: create a libGDX backend based on <a href="http://www.robovm.org" rel="external">RoboVM<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> for iOS.</p>
+
+<p><strong>Required Skills</strong>: Java, C/C++, OpenGL ES, iOS, maybe LLVM</p>
+
+<p><strong>Links</strong>: https://web.archive.org/web/20200426122040/https://www.badlogicgames.com/forum/viewtopic.php?f=23&amp;t=7883 instructions on how to possibly approach this.</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Noblemaster" rel="external">noblemaster<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+<h3 id="project-avian-vmios-backend">Project: Avian VM/iOS backend</h3>
+<p><strong>Goals</strong>: create a libGDX backend based on <a href="http://oss.readytalk.com/avian/" rel="external">Avian VM<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> for iOS.</p>
+
+<p><strong>Required Skills</strong>: Java, C/C++, ObjectiveC, OpenGL ES, iOS</p>
+
+<p><strong>Links</strong>: https://web.archive.org/web/20200426122040/https://www.badlogicgames.com/forum/viewtopic.php?f=23&amp;t=7883 instructions on how to possibly approach this for RoboVM, the same approach is applicable to Avian VM.</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Noblemaster" rel="external">noblemaster<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-generic-2d-level-editor">Project: Generic 2D Level Editor</h3>
+
+<p><strong>Goals</strong>: create a 2D level editor, using libgdx’s scene2d for portability, that allows creating arbitrary level maps that can be loaded via the maps API. As a bonus point, make it extensible through plugins.</p>
+
+<p><strong>Required Skills</strong>: Java, basic graphics programming, bonus if you know scene2d, maybe OSGi</p>
+
+<p><strong>Links</strong>: https://docs.google.com/document/d/1iNo5yB39-iXV10I2bxPHpuk84EoEpU7_L9HSuPKN5tE quick draft of features/requirements we’d like to include.</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nexsoftware" rel="external">nex<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nate" rel="external">nate<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Bach" rel="external">bach<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-oculus-rift-backend">Project: Oculus Rift backend</h3>
+<p><em>Goals</em>: create a backend so libGDX supports <a href="http://www.oculusvr.com/" rel="external">Oculus Rift<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, a virtual reality headset with insanely low latency. We’ll probably have to provide the headset to the student. We’ll either buy it or ask the good folks at Oculus if they’d contribute one. We’d want to either extend an existing backend or write a new one specifically for the Oculus rift. This extension allows to expand libgdx’s domain to non-game related areas, like art installations, scientific visualizations and so on.</p>
+
+<p><strong>Required Skills</strong>: Java, C/C++, 3D programming, including GLSL shaders, linear algebra</p>
+
+<p><strong>Links</strong>: <a href="http://www.youtube.com/watch?v=KJo12Hz_BVI" rel="external">Oculus Rift first reactions, just because it’s funny :)<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Xoppa" rel="external">xoppa<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Bach" rel="external">bach<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-xbox-kinect-extension">Project: XBox Kinect extension</h3>
+
+<p><strong>Goals</strong>: Create an extension that allows people to use the Kinect in their libGDX desktop projects. Kinect may have to be provided by us or sponsored in some way. The extension should also provide one or more demos that demonstrate how the extension works and what potential it has. This extension allows to expand libgdx’s domain to non-game related areas, like art installations, scientific visualizations and so on.</p>
+
+<p><strong>Required Skills</strong>: Java, C/C++, 3D programing, including GLSL shaders, linear algebra</p>
+
+<p><strong>Links</strong>: <a href="http://openkinect.org/wiki/Main_Page" rel="external">OpenKinect, library we could wrap and expose<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p><em>Mentors</em>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Xoppa" rel="external">xoppa<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-leap-motion-extension">Project: Leap Motion extension</h3>
+
+<p><strong>Goals</strong>: <a href="https://www.leapmotion.com/" rel="external">Leap Motion<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> is a new kind of controller that tracks your hand and finger movement and allows you to interact with digital media in a more natural way (think Minority Report). Creating an extension that gives libGDX users access to this device would be the goal for this project. On top of the extension, a set of demos should be created that demonstrate how to use the extension as well as its overall potential. This extension allows to expand libgdx’s domain to non-game related areas, like art installations, scientific visualizations and so on.</p>
+
+<p>Devices would either have to be sponsored or bought by students/mentors. The devices are meant to ship in May, that may be too late.</p>
+
+<p>This idea was orginally submitted by Fisherman on the forums.</p>
+
+<p><strong>Required Skills</strong>: Java, game programming, potentially a scripting language like Lua, JavaScript, Squirrel etc.</p>
+
+<p><strong>Links</strong>:
+<a href="http://www.youtube.com/watch?v=1x-eAvASIFc" rel="external">Block54 Leap Motion demo<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+<a href="https://www.leapmotion.com/developers" rel="external">Information for Leap Motion developers<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p><em>Mentors</em>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>,
+<a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Xoppa" rel="external">Xoppa<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-experimental-features-for-new-3d-api">Project: Experimental Features for new 3D API</h3>
+
+<p><strong>Goals</strong>: libgdx’s 3D API is currently being worked on by a few of the core contributors. We’d like to explore some experimental features, including but not limited to: deferred rendering, different <a href="http://en.wikipedia.org/wiki/Shadow_mapping" rel="external">shadow mapping<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> techniques, especially those suited for mobiles, <a href="http://en.wikipedia.org/wiki/Skeletal_animation" rel="external">CPU-side skinning<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (may require modifications to the API), mobile GPU specific optimizations for the default über-shader, using tools by <a href="https://developer.qualcomm.com/mobile-development/development-devices/trepn-profiler" rel="external">GPU manufacturers<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> to profile and improve the shader, <a href="https://developer.qualcomm.com/mobile-development/development-devices/trepn-profiler" rel="external">dynamic lighting ala God of War 3<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. We are open for other more experimental features. Most of the above will not take a full 3 months, students are advised to pick at least two.</p>
+
+<p><strong>Required Skills</strong>: Java, 3D programming, including GLSL shaders, linear algebra</p>
+
+<p><strong>Links</strong>: <a href="https://web.archive.org/web/20200928230726/https://www.badlogicgames.com/forum/viewtopic.php?f=23&amp;t=7020">Discussion by core developers on the new 3D API</a>, for topic specific links see goals text above.</p>
+
+<p><em>Mentors</em>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Xoppa" rel="external">xoppa<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Bach" rel="external">bach<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-improve-gdx-remote">Project: Improve GDX Remote</h3>
+
+<p><strong>Goals</strong>: Gdx remote allows you to run your application on the desktop, to which you can connect a device that sends input events to the application. This allows testing things like accelerometer controls in the desktop environment without having to deploy the application to the device. The current implementation is very primitive. Ideally, we’d like to also stream video from the desktop to the device, with minimal latency.</p>
+
+<p><strong>Required Skills</strong>: Java, network programming</p>
+
+<p><strong>Links</strong>: <a href="https://web.archive.org/web/20200928224908/https://www.badlogicgames.com/wordpress/?p=1590">blog post with video of current implementation</a></p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nate" rel="external">nate<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nexsoftware" rel="external">nex<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-websocket-support">Project: Websocket Support</h3>
+
+<p><strong>Goals</strong>: libGDX currently only has rudimentary networking support (HTTP, TCP). We’d like to add Websocket support, allowing network programming with the HTML5 backend. This would allow us to do things like <a href="http://chrome.com/maze/" rel="external">Chrome World Wide Maze<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> or <a href="http://browserquest.mozilla.org/" rel="external">Browser Quest<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. Adding Websocket support would require a change in our current networking APIs, namely Socket#getInputStream needs to be changed.</p>
+
+<p><strong>Required Skills</strong>: Java, C#, network programming, GWT</p>
+
+<p><em>Links</em>: <a href="https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Net.java" rel="external">Entry-point to libGDX networking API<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p><em>Mentors</em>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Tamas" rel="external">tamas<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nexsoftware" rel="external">nex<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-simplified-3d-physics-api-and-html5-implementation">Project: Simplified 3D Physics API and HTML5 implementation</h3>
+<p><strong>Goals</strong>: libGDX wraps <a href="http://bulletphysics.org/wordpress/" rel="external">bullet physics<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, an OSS 3D physics library. Currently, the bullet extension is only supported on the desktop and Android (iOS pending). We’d like to create a simplified 3D physics API, maybe modelled after <a href="https://code.google.com/p/bullet/source/browse/trunk/src/Bullet-C-Api.h" rel="external">Bullet’s C-API<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. This would allow us to also create an implementation for the HTML5 backend based on <a href="https://github.com/kripken/ammo.js/" rel="external">ammo.js<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> or other Javascript 3D physics libraries.</p>
+
+<p>Note that we already have Box2D fully working on all platforms, including HTML5. This was achieved by using JBox2D for the HTML5 backend. Doing this for bullet seems less feasible.</p>
+
+<p><strong>Required Skills</strong>: Java, GWT</p>
+
+<p><strong>Links</strong>: See links in goals above.</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Xoppa" rel="external">xoppa<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-scripting-support">Project: Scripting Support</h3>
+
+<p><strong>Goals</strong>: libGDX is currently tighly coupled to JVM languages. Scripting can help game developers to quickly prototype ideas and also have technical artists interact with the game mechanics more easily. A scripting extension that is cross-platform could be created. It does not need to provide specific bindings to libgdx, but should be easy to integrate and customize on all supported platforms. Javascript seems to be the best candidate (through e.g. <a href="http://openjdk.java.net/projects/nashorn/" rel="external">Nashorn on the desktop<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, plain Javascript in GWT, <a href="https://code.google.com/p/v8/" rel="external">V8<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> on Android and <a href="http://trac.webkit.org/wiki/JavaScriptCore" rel="external">JavascriptCore<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> on iOS, <a href="http://www.lua.org/" rel="external">Lua<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> may be an option as well. The end result would be a libGDX extension that lets users integrate scripts in their games more easily.</p>
+
+<p>This project could be done in collaboration with the High-Level Game Engine project below.</p>
+
+<p><strong>Required Skills</strong>: Java, C/C++, familiarity with at least one potential scripting language</p>
+
+<p><strong>Links</strong>: see links in goals description</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Bach" rel="external">bach<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Tamas" rel="external">tamas<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-high-level-game-engine">Project: High-level Game Engine</h3>
+
+<p><strong>Goals</strong>: libGDX is a framework which can be overwhelming for people who do not have previous experience with game programming. A high-level game engine on top of libGDX could lower the barrier of entry. We propose to build a high-level 2D game engine on top of libGDX. Good API design, documentation and examples are part of the challenge. Inspiration can be found in projects such as <a href="http://www.coronalabs.com/products/corona-sdk/" rel="external">Corona<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="http://flixel.org/" rel="external">Flixel<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="http://haxepunk.com/" rel="external">HaxePunk<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> or <a href="http://www.cocos2d-iphone.org/" rel="external">Cocos2D<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. We do not rule out a 3D engine either, but think 2D would have more chances of success given the time frame of Google Summer of Code. Ideally, the engine would be based on the <a href="http://gamadu.com/artemis/" rel="external">component/entity system pattern<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<p>This project could be done in collaboration with the Scripting Support project above.</p>
+
+<p><strong>Required Skills</strong>: Java, game programming, potentially a scripting language like Lua, JavaScript, Squirrel etc.</p>
+
+<p><strong>Links</strong>: see links in description above.</p>
+
+<p><strong>Mentors</strong>: <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Bach" rel="external">bach<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Tamas" rel="external">tamas<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nate" rel="external">nate<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-command-line-project-management">Project: Command Line Project Management</h3>
+
+<p>(FIXME done with Gradle?)</p>
+
+<p><strong>Goals</strong>: libGDX projects are usually done with Eclipse in mind. While we support <a href="/wiki/maven-integration">Maven</a> and other <a href="/wiki/using-libgdx-with-intellij-idea">IDEs</a> and development environments, integration isn’t as straight forward. Maven is problematic due to GWT and Android being somewhat second class citizens in that area. Also, IDE integration of Maven Android and GWT projects is lacking. In addition to IDE woes, packaging and deploying projects can be cumbersome. We’d like to develop a command line application that allows the creation of new libGDX projects, create project files for various IDEs, create POM and Gradle build files, can update dependencies automatically, can remove and add extensions, and package and deploy the application to connected devices. <a href="http://theengine.co/loom" rel="external">Loom Engine<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> and <a href="http://www.nme.io/developer/documentation/getting-started/" rel="external">Haxe NME<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> provide similar tools.</p>
+
+<p><strong>Required Skills</strong>: Java, Maven, Gradle, Eclipse, Intellij, Netbeans
+<strong>Links</strong>: <a href="https://docs.google.com/document/d/1yy3Q5B0K06yz_Oool1ZCtavtSvASJa56lic_5Yg1C9c/edit?usp=sharing" rel="external">Google Doc with requirements<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p><strong>Mentors</strong>:
+<a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Tamas" rel="external">tamas<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>,<a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Bach" rel="external">bach<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nate" rel="external">nate<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic" rel="external">badlogic<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<hr>
+
+<h3 id="project-increase-robustness-through-static-code-analysis-tools">Project: Increase Robustness through Static Code Analysis Tools</h3>
+
+<p><strong>Goals</strong>: libGDX is used in production, and as such requires high robustness. One way of increasing robustness is to use static analysis tools that uncover bad practices and bugs. Applying such analysis to a code base as big as libGDX’s is a challenge. Not only is the size an issue, but a gaming framework may have to rely on patterns for performance that are wrongly identified as issues by static analysis tools. For this idea, we’d like to see how static analysis tools can be exploited to increase libGDX’s quality and how we could integrate them into our everyday workflow. It is expected that whatever tool is used for analysis needs to be adapted with new rules that fit for the requirements of a gaming framework.</p>
+
+<p><strong>Required Skills</strong>: Java, Maven, Gradle, Eclipse, Intellij, Netbeans</p>
+
+<p><strong>Links</strong>: <a href="http://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis#Java" rel="external">List of static analysis tools on Wikipedia<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p><strong>Mentors</strong>:
+[https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Nate nate], [https://code.google.com/p/libgdx/wiki/GoogleSummerOfCode2013Mentors?ts=1363700945&amp;updated=GoogleSummerOfCode2013Mentors#Badlogic badlogic]</p>
+
+<p>(FIXME, maybe add the mentor list here… idk)</p>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

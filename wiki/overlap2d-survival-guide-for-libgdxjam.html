@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Overlap2D survival guide for - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Overlap2D survival guide for">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/overlap2d-survival-guide-for-libgdxjam">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/overlap2d-survival-guide-for-libgdxjam">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Overlap2D survival guide for
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/overlap2d-survival-guide-for-#libgdxjam.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <p>So you are planning to join #libGDXJAM and you are considering (or already decided upon) choosing Overlap2D editor as your primary weapon of choice. If so, read on!</p>
+
+<p>In this article I (as the creator of Overlap2D) will try to provide as much information as possible on how to be friends with O2D and use it wisely!</p>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ol>
+  <li>Make sure you have JDK 1.8 (It’s required for Overlap2D to run, and you always can have both 1.7 and 1.8)</li>
+  <li>Download the Editor itself from our <a href="http://overlap2d.com/" rel="external">website<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+</li>
+  <li>Make yourself a nice cozy folder to work in</li>
+  <li>Get some test assets (png sprites) later you can substitute that with your own.</li>
+  <li>Learn more about <a href="https://github.com/libgdx/ashley/wiki" rel="external">Ashley<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (our runtime uses that architecture)</li>
+</ol>
+
+<h3 id="working-with-overlap2d">Working with Overlap2d</h3>
+
+<p>Working with Overlap2D consists of several parts:</p>
+<ol>
+  <li>Creating your main libGDX project using <a href="http://bitly.com/1i3C7i3" rel="external">setup tool<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+</li>
+  <li>Creating empty project with overlap2d</li>
+  <li>Making a test scene in the editor (import some images, put some stuff on the scene)</li>
+  <li>Export that data to your assets folder in your libGDX project</li>
+  <li>Use overlap2d-libgdx-runtime to render your scene in your game.</li>
+</ol>
+
+<p>Now I can write a lot and bore you to death. Or, you can just watch me do all this steps in detail: <a href="https://www.youtube.com/watch?v=bhvHm2sM0qo" rel="external">https://www.youtube.com/watch?v=bhvHm2sM0qo<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<p>Important things to know:</p>
+<ul>
+  <li>When using setup app, click on Third Party Extensions and select overlap2d from the list, also make sure to have freetype and box2d checkboxes selected.</li>
+  <li>For the JAM better use latest runtime, which is 0.1.2-SNAPSHOT (make sure to set that in build.gralde file, because it’s not default value)</li>
+  <li>When creating your o2d project, don’t think about multiple resolutions and huge textures. This is just a JAM. I would go with a small camera-world size (say 800x480 or similar), and pixel per world unit somewhere between 1-4.</li>
+</ul>
+
+<h1 id="what-game-are-you-making">What game are you making?</h1>
+
+<p>Let’s figure out what you plan to make, to help you most.</p>
+
+<h3 id="side-scroller-or-runner">Side scroller or runner</h3>
+
+<p>So you are making a side scroller or a runner, meaning you have this character that walks or runs on this background from left to right. That is perfect candidate for Overlap2D. You can make several layers, like background, foreground. Combine things like trees and mountains into groups, position things behind. Then have your main character (probably an animation) be in front. Give it a unique identifier, And so on.
+There is even tutorial series on how to do it in our <a href="http://overlap2d.com/documentation/" rel="external">documentation<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<h3 id="tiled-view-from-above">Tiled view from above</h3>
+
+<p>Could be tower defense or strategy or dungeon kind of thing. In this case you want your world to have tiles. 
+Decide on images you want to use as tiles (make sure they are same size and square) and put them lined up somewhere on the scene. give each of them tag “tile”. In upper panel find grid size, and set it to your tile size (this way things will snap to grid) Now you can just copy paste your initial tiles, and put them where they fit. You can then give them additional tags like “wall” or “turret” to mention their behaviour or if 
+player can or cannot walk through them. Of course later you need to write a System in your code, to use this tags accordingly. There is a sample “Tower defense” project I made you can take a look at as an example<br>
+<a href="https://github.com/azakhary/thm" rel="external">here<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<h3 id="dynamic-world-generation">Dynamic world generation</h3>
+
+<p>So you don’t want to have entire map made up, because it has to be random each time. For this you can make a predefined world “chunks” conevrt them into composite items, put them into library, and then randomly load from library and stitch together.</p>
+
+<h3 id="i-need-it-for-ui">I need it for UI</h3>
+
+<p>Okay so your game itself is kind of different and does not need a predefined scene data. Maybe you generate all stuff with code, and that’s fine. But you want to make your menus, dialogs and buttons with overlap2d?
+That’s cool too! You can make buttons in overlap2d easily. just chose button assets, and right click convert to button. This will create a composite with some predefined layers. Make sure to go in, and put things in correct places (pressed layer and so on) You can test your button directly in the editor. 
+To make some dialogs use 9patch images for background (actually same for buttons) If you do not have a 9patch images, you can make one directly from the editor. Just right click on regular image, and choose “Convert to 9patch” this will open a dialog to set it up. You can later convert all the buttons and texts to composite items, and put that dialog into library. Then later form your code create a CompositeActor from that library data. (Get VO object using resource manager, and then send it to CompositeActor constructor)</p>
+
+<h1 id="tips-and-tricks">Tips and Tricks</h1>
+
+<ul>
+  <li>If you need to navigate through nested items, best way to do it, is use helper class ItemWrapper. Just wrap an entity into it, and then use methods like getChild to navigate.</li>
+  <li>If you have many objects that need to behave in same way (for example moving clouds) best thing to do is, give all clouds on scene a same tag. Then from use sceneLoader.addComponentsByTagName method to add a cloud component to all clouds. Then you can create a System that manages that family of components to have one class that does your “cloud” logic.</li>
+  <li>If you have one unique object that needs logic (like for example player) just give it a unique id, and then make an IScript for it. Overlap2D has a System for iScripts, and you can attach IScript to an item using ItemWrapper class. IScript is a custom class you make that implements specific interface. To make sure it has methods init, act, and dispose.</li>
+  <li>You can render your UI using entity enine as well, by just putting your UI on the scene. But if you need your camera to zoom out and move, then maybe it’s a better idea to create a separate stage for your UI, and use CompositeActor’s for it.</li>
+  <li>When programming systems, to monitor user inputs, use Gdx.input, it has all you may ever need. No need for ye-olde event listeners.</li>
+  <li>So you have this composite inside a composite inside a composite, and then there is different physics shapes and bodies inside, and they all behave wrong - yeah… don’t do that. Keep it simple, and it’ll work :-P</li>
+</ul>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

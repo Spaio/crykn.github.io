@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Build Infrastructure Setup - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Build Infrastructure Setup">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/build-infrastructure-setup">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/build-infrastructure-setup">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Build Infrastructure Setup
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/build-infrastructure-setup.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <p>Our build infrastructure has the responsibility of building libGDX for all supported platforms (Windows, Linux, Mac OS X, Android, iOS, HTML). On top of the boring old Java code, we also need to compile the native code for each platform and architecture (32-, 64-bit if available).</p>
+
+<p>We solve this issue by using cross-compilation on a Linux host to compile native code for Windows, Linux and Android. We additionally use a Mac to compile the iOS and Mac OS X native binaries.</p>
+
+<p>The following sections document how to setup this build infrastructure.</p>
+
+<h2 id="setting-up-the-linux-host">Setting up the Linux host</h2>
+<p>The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer releases or other Linux distributions should work just as well. The following Debian packages can be installed from the official repositories</p>
+
+<ul>
+  <li>unzip</li>
+  <li>zip</li>
+  <li>daemon</li>
+  <li>git</li>
+  <li>openjdk-7-jdk</li>
+  <li>jenkins (latest)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -</code></li>
+      <li>add <code class="language-plaintext highlighter-rouge">deb http://pkg.jenkins-ci.org/debian binary/</code> to <code class="language-plaintext highlighter-rouge">/etc/apt/sources.list</code>
+</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">sudo apt-get update</code> followed by <code class="language-plaintext highlighter-rouge">sudo apt-get install jenkins</code>, this will install the latest Jenkins version and provide an update path in the future instead of using the Jenkins version from the Ubuntu repositories</li>
+      <li>after installation, open <code class="language-plaintext highlighter-rouge">/etc/default/jenkins</code> and set <code class="language-plaintext highlighter-rouge">HTTP_HOST</code> and <code class="language-plaintext highlighter-rouge">AJP_HOST</code> to <code class="language-plaintext highlighter-rouge">0.0.0.0</code> to listen for connections on all net devices</li>
+      <li>setup users, enable global security using the Jenkins user database, letting any logged in user to anything</li>
+      <li>install the following plugins: Copy to Slave Plugin, Git Plugin, Mailer, Maven Project Plugin, Parameterized Trigger Plugin, Gradle Plugin</li>
+      <li>Go to the “Configure System” site and set the Ant and installation locations</li>
+    </ul>
+  </li>
+  <li>gcc, g++, gcc-multilib, g++-multilib (linux compilers, 32- and 64-bit)</li>
+  <li>mesa-common-dev, libxxf86vm-dev, libxrandr-dev, libx11-dev:i386 (Linux OpenGL development, only needed for jglfw, 64-bit only)</li>
+  <li>mingw-w64 (windows compilers, 32- and 64-bit)</li>
+  <li>ccache (optional, see ccache section below)</li>
+  <li>lib32z1 (cause Android SDK tools require it, aapt to be specific…)</li>
+</ul>
+
+<p>The following software has to be installed manually</p>
+
+<ul>
+  <li>
+<a href="http://ant.apache.org/" rel="external">Ant 1.9.3+<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (fixes a bug that’s vital for build time reduction!)
+    <ul>
+      <li>Download the latest binary distribution, unzip it to /opt/ant</li>
+      <li>Add <code class="language-plaintext highlighter-rouge">export PATH=$PATH:/opt/ant/bin</code> to <code class="language-plaintext highlighter-rouge">/etc/profile</code>
+</li>
+      <li>Make sure the Jenkins user can execute Ant</li>
+    </ul>
+  </li>
+  <li>
+<a href="http://maven.apache.org/download.cgi" rel="external">Maven 3+<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    <ul>
+      <li>Download the latest binary distribution, unzip it to /opt/maven</li>
+      <li>Add <code class="language-plaintext highlighter-rouge">export PATH=$PATH:/opt/mave/bin</code> to <code class="language-plaintext highlighter-rouge">/etc/profile</code>
+</li>
+      <li>Make sure the Jenkins user can execute Maven</li>
+      <li>modify /opt/maven/conf/settings.xml to include the credentials for SonaType snapshot deployment (ask Mario)</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://developer.android.com/tools/sdk/ndk/index.html" rel="external">Android NDK<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    <ul>
+      <li>Download the latest tar.bz2, unpack to <code class="language-plaintext highlighter-rouge">/opt/android-ndk</code>
+</li>
+      <li>Add <code class="language-plaintext highlighter-rouge">export ANDROID_NDK=/opt/android-ndk</code> to <code class="language-plaintext highlighter-rouge">/etc/profile</code>
+</li>
+      <li>Add <code class="language-plaintext highlighter-rouge">export NDK_HOME=/opt/android-ndk</code> to <code class="language-plaintext highlighter-rouge">/etc/profile</code>
+</li>
+      <li>Make sure the Jenkins user can execute ndk-build</li>
+    </ul>
+  </li>
+  <li>[Android SDK]
+    <ul>
+      <li>Download the latest .tgz, unpack to /opt/android-sdk</li>
+      <li>Add <code class="language-plaintext highlighter-rouge">export ANDROID_HOME=/opt/android-sdk</code> to <code class="language-plaintext highlighter-rouge">/etc/profile</code>
+</li>
+      <li>In <code class="language-plaintext highlighter-rouge">/opt/android-sdk/tools</code>, run <code class="language-plaintext highlighter-rouge">./android update sdk --no-ui</code> to install all platforms, build tools etc.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="setting-up-the-mac-os-x-host">Setting up the Mac OS X host</h2>
+<p>We need a Mac to build natives for iOS and Mac OS X. This host will then be used as a Jenkins slave to build parts of the libGDX project. This dependency is expressed in the Jenkins Jobs responsible for building libgdx, see below. The Mac needs to have the following things installed:</p>
+
+<ul>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html" rel="external">JDK 8+<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+  <li>XCode, install via the Mac App Store
+    <ul>
+      <li>Make sure the command line utilities are also installed, search Google for how to do this with the latest XCode.</li>
+      <li>you don’t need a developers license to compile for a device, you just can’t deploy to one</li>
+    </ul>
+  </li>
+  <li>Ant 1.9.3, install via <a href="http://brew.sh/" rel="external">Homebrew<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+</li>
+  <li>(optional) ccache via Homebrew</li>
+</ul>
+
+<p>Once the Mac is setup, you can move on to setting up the Jobs on Jenkins</p>
+
+<h2 id="setting-up-the-libgdx-jenkins-jobs">Setting up the libGDX Jenkins jobs</h2>
+<p>With your Linux host running Jenkins, go to http://JENKINS_ADDRESS:8080.</p>
+
+<h3 id="setting-up-the-jenkins-mac-slave">Setting up the Jenkins Mac Slave</h3>
+<ul>
+  <li>On the landing page, click on <code class="language-plaintext highlighter-rouge">Manage Jenkins</code>, then go to <code class="language-plaintext highlighter-rouge">Manage Nodes</code>.</li>
+  <li>Click on <code class="language-plaintext highlighter-rouge">New Node</code>, give it the name <code class="language-plaintext highlighter-rouge">Mac</code>, select <code class="language-plaintext highlighter-rouge">Dumb Slave</code> and press <code class="language-plaintext highlighter-rouge">OK</code>.</li>
+  <li>Set the <code class="language-plaintext highlighter-rouge">Remote FS root</code> to a folder of your choice, e.g. <code class="language-plaintext highlighter-rouge">/Users/badlogic/jenkins</code>
+</li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Usage</code> to <code class="language-plaintext highlighter-rouge">Leave this machine for tied jobs only</code>
+</li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Launch method</code> to <code class="language-plaintext highlighter-rouge">Launch Slave agents via Java Web Start</code>
+</li>
+</ul>
+
+<p>You can now startup your Mac, open a browser and navigate to http://JENKINS_ADDRESS:8080/computer/Mac/. Click on the <code class="language-plaintext highlighter-rouge">Launch</code> button to download the Java Web start file, double click it to run the slave. Once it’s running, you should see marked as being online in your Jenkins instance.</p>
+
+<h3 id="setting-up-the-jenkins-libgdx-mac-job">Setting up the Jenkins libGDX Mac Job</h3>
+<p>The Mac job calls into the build-mac-ios.xml Ant script, then copies all the Mac and iOS native libraries to the Linux master node which will then continue building the rest of libgdx. For this we need to create a job, let’s call it libgdx-mac.</p>
+
+<ul>
+  <li>Click <code class="language-plaintext highlighter-rouge">New Item</code>, enter <code class="language-plaintext highlighter-rouge">libgdx-mac</code> as the name, and select <code class="language-plaintext highlighter-rouge">Freestyle Project</code>, press <code class="language-plaintext highlighter-rouge">OK</code>
+</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Discard Old Builds</code>, set max # builds to keep to 1</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Restrict where this project can be run</code> and enter the name of the Mac slave (<code class="language-plaintext highlighter-rouge">Mac</code>)</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Source Code Management</code>, select git and specify the libGDX repo URL <code class="language-plaintext highlighter-rouge">https://github.com/libgdx/libgdx.git</code>, leave the rest as is (branch master etc.)</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Build</code>, click <code class="language-plaintext highlighter-rouge">Add build step</code>, select <code class="language-plaintext highlighter-rouge">Invoke Ant</code>, set <code class="language-plaintext highlighter-rouge">Targets</code> to <code class="language-plaintext highlighter-rouge">-f build-mac-ios.xml -v</code>
+</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Post-build Actions</code>, click <code class="language-plaintext highlighter-rouge">Add post-build action</code>, select <code class="language-plaintext highlighter-rouge">Copy files back to the job's workspace on the master node</code>, and for <code class="language-plaintext highlighter-rouge">Files to copy</code> specify <code class="language-plaintext highlighter-rouge">**/*.a,**/*.dylib</code>. Uncheck <code class="language-plaintext highlighter-rouge">Run After Result Is Finalised?</code>. Click on <code class="language-plaintext highlighter-rouge">Advanced</code>, then check <code class="language-plaintext highlighter-rouge">Override destination folder</code> and set it to <code class="language-plaintext highlighter-rouge">/var/lib/jenkins/workspace/libgdx</code> or wherever your libGDX workspace lives on the Linux host. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Post-build Actions</code>, click <code class="language-plaintext highlighter-rouge">Add post-build action</code>, select <code class="language-plaintext highlighter-rouge">E-mail Notification</code>, specify the recipients, use a space as a separator.</li>
+</ul>
+
+<h3 id="setting-up-the-jenkins-libgdx-job">Setting up the Jenkins libGDX Job</h3>
+<p>The main job is executed on the Linux host, which builds all Java related things, all Windows, Linux and Android native files, invokes the Mac job and copies the Mac and iOS natives over, then finally packages it all up neatly and distributes the nightly build to the website and pushes the Maven artifacts to SonaType. Here’s how that job’s setup</p>
+
+<ul>
+  <li>Click <code class="language-plaintext highlighter-rouge">New Item</code>, enter <code class="language-plaintext highlighter-rouge">libgdx</code> as the name, and select <code class="language-plaintext highlighter-rouge">Freestyle Project</code>, press <code class="language-plaintext highlighter-rouge">OK</code>
+</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Discard Old Builds</code>, set max # builds to keep to 1</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Source Code Management</code>, select git and specify the libGDX repo URL <code class="language-plaintext highlighter-rouge">https://github.com/libgdx/libgdx.git</code>, leave the rest as is (branch master etc.)</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Build Triggers</code>, select <code class="language-plaintext highlighter-rouge">Poll SCM</code> and set <code class="language-plaintext highlighter-rouge">Schedule</code> to <code class="language-plaintext highlighter-rouge">@hourly</code>
+</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Build</code>, click <code class="language-plaintext highlighter-rouge">Add build step</code>, select <code class="language-plaintext highlighter-rouge">Trigger/call builds on other projects</code>, set <code class="language-plaintext highlighter-rouge">Projects to build</code> to <code class="language-plaintext highlighter-rouge">libgdx-mac</code>, check <code class="language-plaintext highlighter-rouge">Block until the triggered projects finish their builds</code>
+</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Build</code>, click <code class="language-plaintext highlighter-rouge">Add build step</code>, select <code class="language-plaintext highlighter-rouge">Invoke Ant</code>, set <code class="language-plaintext highlighter-rouge">Targets</code> to <code class="language-plaintext highlighter-rouge">-f build.xml -Dbuild-natives=true -Dversion=nightly -v</code>
+</li>
+  <li>(Optional) Under <code class="language-plaintext highlighter-rouge">Build</code>, click <code class="language-plaintext highlighter-rouge">Add build step</code>, select <code class="language-plaintext highlighter-rouge">Execute shell</code>, then write a shell script to copy the outputs of the libGDX build (nightly zip) to a webserver of your choice. See below for an example</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Build</code>, click <code class="language-plaintext highlighter-rouge">Add build step</code>, select <code class="language-plaintext highlighter-rouge">Invoke top-level Maven targets</code>, set <code class="language-plaintext highlighter-rouge">Goals</code> to <code class="language-plaintext highlighter-rouge">clean deploy</code>
+</li>
+  <li>Under <code class="language-plaintext highlighter-rouge">Post-build Actions</code>, click <code class="language-plaintext highlighter-rouge">Add post-build action</code>, select <code class="language-plaintext highlighter-rouge">E-mail Notification</code>, specify the recipients, use a space as a separator.</li>
+</ul>
+
+<h3 id="shell-script-to-copy-nightly-build-to-webserver">Shell Script to copy nightly build to webserver</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> <span class="nt">-rf</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/<span class="k">*</span>.zip
+<span class="nb">rm</span> <span class="nt">-rf</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/<span class="k">*</span>.zip.MD5
+<span class="nb">rm</span> <span class="nt">-rf</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/dist
+<span class="nb">rm</span> <span class="nt">-rf</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/docs
+<span class="nb">rm</span> <span class="nt">-rf</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/config
+<span class="nb">cp</span> <span class="nv">$WORKSPACE</span>/libgdx-nightly.zip /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-<span class="sb">`</span><span class="nb">date</span> +%Y%m%d<span class="sb">`</span>.zip
+<span class="nb">cp</span> <span class="nv">$WORKSPACE</span>/libgdx-nightly.zip.MD5 /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-<span class="sb">`</span><span class="nb">date</span> +%Y%m%d<span class="sb">`</span>.zip.MD5
+<span class="nb">ln</span> <span class="nt">-s</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-<span class="sb">`</span><span class="nb">date</span> +%Y%m%d<span class="sb">`</span>.zip /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-latest.zip
+<span class="nb">ln</span> <span class="nt">-s</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-<span class="sb">`</span><span class="nb">date</span> +%Y%m%d<span class="sb">`</span>.zip.MD5 /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-latest.zip.MD5
+<span class="nb">cp</span> <span class="nt">-r</span>  <span class="nv">$WORKSPACE</span>/dist/docs /srv/www/libgdx.badlogicgames.com/public_html/nightlies/docs
+<span class="nb">cp</span> <span class="nt">-r</span>  <span class="nv">$WORKSPACE</span>/dist/ /srv/www/libgdx.badlogicgames.com/public_html/nightlies/
+<span class="nb">cp</span> <span class="nt">-r</span> <span class="nv">$WORKSPACE</span>/extensions/gdx-setup-ui/config /srv/www/libgdx.badlogicgames.com/public_html/nightlies/
+<span class="nb">rm</span> <span class="nt">-rf</span> /srv/www/libgdx.badlogicgames.com/public_html/nightlies/.svn
+</code></pre></div></div>
+
+<h2 id="ccache">CCACHE</h2>
+<p>The native builds can take considerable time, as such we’d like to only build what changed. Our C/C++ build system is based on a custom set of Ant scripts which do not support incremental builds (but are super easy to setup, see <a href="https://github.com/libgdx/libgdx/wiki/jnigen" rel="external">jnigen<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. And even (C)Make builds don’t necessarily help you with incremental builds. Also, you want to clear your build if you publish snapshots, so any incremental build you get from a proper C/C++ build tool doesn’t really help.</p>
+
+<p>To solve this issue, we use <a href="http://ccache.samba.org/" rel="external">ccache<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> which caches compilation results (object files). Ccache acts as a proxy to C/C++, hashes any source code file you push through it (expanding preprocessor macros and includes), checking if it has a binary fitting that hash in its cache. If it does, it can directly return the object file instead of having to invoke GCC. Which is nice, as it gives us sort of incremental builds even if we clean out any previous build results!</p>
+
+<p>Setting up ccache for cross-compilation is pretty simple.</p>
+
+<h3 id="linux-host-ccache-setup">Linux Host ccache setup</h3>
+<ul>
+  <li>Install ccache via <code class="language-plaintext highlighter-rouge">apt-get install ccache</code>
+</li>
+  <li>Create a directory <code class="language-plaintext highlighter-rouge">/opt/ccache</code> owned by the jenkins user</li>
+  <li>Add a line at the bottom of <code class="language-plaintext highlighter-rouge">/etc/profile</code> like this: <code class="language-plaintext highlighter-rouge">export PATH=/opt/ccache:$PATH</code>
+</li>
+  <li>Add a line at the bottom of <code class="language-plaintext highlighter-rouge">/etc/profile</code> like this: <code class="language-plaintext highlighter-rouge">export NDK_CCACHE="ccache"</code>, this will make the Android NDK use ccache!</li>
+  <li>For each compiler executable (gcc, g++, i686-w64-mingw32-gcc, i686-w64-mingw32-g++, x86_64-w64-mingw32-gcc, x86_64-w64-mingw32-g++), create a script that looks analogous to this:
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ccache /usr/bin/x86_64-w64-mingw32-gcc "$@"
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>And that’s it. Through this, we proxy all compiler calls through ccache which will speed up our build considerably.</p>
+
+<h3 id="mac-host-ccache-setup">Mac Host ccache setup</h3>
+<ul>
+  <li>Install ccache through Homebrew</li>
+  <li>Create a directory <code class="language-plaintext highlighter-rouge">/opt/ccache</code> owned by the jenkins user</li>
+  <li>Add a line at the bottom of <code class="language-plaintext highlighter-rouge">/etc/profile</code> like this: <code class="language-plaintext highlighter-rouge">export PATH=/opt/ccache:$PATH</code>
+</li>
+  <li>For each compiler executable (gcc, g++), create a script that looks analogous to this:
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ccache /usr/bin/g++ "$@"
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Through this, we proxy all compiler calls for Mac OS X native compilation through ccache, speeding up our build. I have yet to figure out a way to make this work with our iOS native builds.</p>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

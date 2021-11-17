@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Mouse, Touch and Keyboard - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Mouse, Touch and Keyboard">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/mouse,-touch-and-keyboard">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/mouse,-touch-and-keyboard">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Mouse, Touch and Keyboard
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/mouse,-touch-and-keyboard.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <p>The main input devices libGDX supports are the mouse on the desktop/browser, touch screens on Android and keyboards. Let’s review how libGDX abstracts those.</p>
+
+<h2 id="keyboard">Keyboard</h2>
+<p>Keyboards signal user input by generating events for pressing and releasing a key. Each event carries with it a key-code that identifies the key that was pressed/released. These key-codes differ from platform to platform. libGDX tries to hide this fact by providing its own key-code table, see the <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Input.Keys.html">Keys</a> <a href="https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Input.java#L63" rel="external">(source)<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> class. You can query which keys are currently being pressed via <a href="/wiki/polling">Polling</a>.</p>
+
+<p>Key-codes alone do not give us information about which character the user actually entered. This information is often derived from the state of multiple keys, e.g. the character ‘A’ is generated by the keys ‘a’ and ‘shift’ being pressed simultaneously. In general, deriving characters from the keyboard’s state (which keys are down) is non-trivial. Thankfully, the operating system usually has a means to hook up an event listener that not only reports key-code events (key pressed/key released), but also characters. libGDX uses this mechanism under the hood to provide you with character information. See <a href="/wiki/event-handling">Event Handling</a>.</p>
+
+<h2 id="mouse--touch">Mouse &amp; Touch</h2>
+<p>Mouse and touch input allow the user to point at things on the screen. Both input mechanisms report the location of interaction as 2D coordinates relative to the upper left corner of the screen, with the positive x-axis pointing to the right and the y-axis pointing downward.</p>
+
+<p>Mouse input comes with additional information, namely which button was pressed. Most mice feature a left and a right mouse button as well as a middle mouse button. In addition, there’s often a scroll wheel which can be used for zooming or scrolling in many applications.</p>
+
+<p>Touch input does not have the notion of buttons and is complicated by the fact that multiple fingers might be tracked depending on the hardware. First generation Android phones only supported single-touch. Starting with phones like the Motorola Droid, multi-touch became a standard feature on most Android phones.</p>
+
+<p>Note that touch can be implemented quite differently on different devices. This can affect how pointer indexes are specified and released and when touch events are fired. Be sure to test your control scheme on as many devices as possible. There are also many input test apps available in the market which can help determine how a particular device reports touch and aid in designing a control scheme that works best across a range of devices.</p>
+
+<p>libGDX abstracts unified handling of mouse and touch input. We view mouse input as a specialized form of touch input. Only a single finger is tracked, and in addition to coordinates we also report which buttons were pressed. For touch input we support tracking multiple fingers (pointers) and report the left mouse button for all events.</p>
+
+<p>Note that on Android the coordinate system is either relative to portrait or landscape mode, depending on what you set for your application.</p>
+
+<p>Mouse and touch input can either be <a href="/wiki/polling">polled</a> or processed via <a href="/wiki/event-handling">Event Handling</a></p>
+
+<h3 id="touch-point">Touch Point</h3>
+
+<p>To get correct world position of touch point or mouse cursor it is necessary to unproject the raw screen position coordinates with camera that operate in world space. Below is self contained example of doing just that.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimplerTouchTest</span> <span class="kd">extends</span> <span class="nc">ApplicationAdapter</span> <span class="kd">implements</span> <span class="nc">InputProcessor</span> <span class="o">{</span>
+	<span class="c1">// we will use 32px/unit in world</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">float</span> <span class="no">SCALE</span> <span class="o">=</span> <span class="mi">32</span><span class="n">f</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">float</span> <span class="no">INV_SCALE</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="na">f</span><span class="o">/</span><span class="no">SCALE</span><span class="o">;</span>
+	<span class="c1">// this is our "target" resolution, note that the window can be any size, it is not bound to this one</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">float</span> <span class="no">VP_WIDTH</span> <span class="o">=</span> <span class="mi">1280</span> <span class="o">*</span> <span class="no">INV_SCALE</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">float</span> <span class="no">VP_HEIGHT</span> <span class="o">=</span> <span class="mi">720</span> <span class="o">*</span> <span class="no">INV_SCALE</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="nc">OrthographicCamera</span> <span class="n">camera</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">ExtendViewport</span> <span class="n">viewport</span><span class="o">;</span>		
+	<span class="kd">private</span> <span class="nc">ShapeRenderer</span> <span class="n">shapes</span><span class="o">;</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span> <span class="o">()</span> <span class="o">{</span>
+		<span class="n">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OrthographicCamera</span><span class="o">();</span>
+		<span class="c1">// pick a viewport that suits your thing, ExtendViewport is a good start</span>
+		<span class="n">viewport</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ExtendViewport</span><span class="o">(</span><span class="no">VP_WIDTH</span><span class="o">,</span> <span class="no">VP_HEIGHT</span><span class="o">,</span> <span class="n">camera</span><span class="o">);</span>
+		<span class="c1">// ShapeRenderer so we can see our touch point</span>
+		<span class="n">shapes</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ShapeRenderer</span><span class="o">();</span>
+		<span class="nc">Gdx</span><span class="o">.</span><span class="na">input</span><span class="o">.</span><span class="na">setInputProcessor</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span> <span class="o">()</span> <span class="o">{</span>
+		<span class="nc">Gdx</span><span class="o">.</span><span class="na">gl</span><span class="o">.</span><span class="na">glClear</span><span class="o">(</span><span class="no">GL20</span><span class="o">.</span><span class="na">GL_COLOR_BUFFER_BIT</span><span class="o">);</span>
+		<span class="n">shapes</span><span class="o">.</span><span class="na">setProjectionMatrix</span><span class="o">(</span><span class="n">camera</span><span class="o">.</span><span class="na">combined</span><span class="o">);</span>
+		<span class="n">shapes</span><span class="o">.</span><span class="na">begin</span><span class="o">(</span><span class="nc">ShapeRenderer</span><span class="o">.</span><span class="na">ShapeType</span><span class="o">.</span><span class="na">Filled</span><span class="o">);</span>
+		<span class="n">shapes</span><span class="o">.</span><span class="na">circle</span><span class="o">(</span><span class="n">tp</span><span class="o">.</span><span class="na">x</span><span class="o">,</span> <span class="n">tp</span><span class="o">.</span><span class="na">y</span><span class="o">,</span> <span class="mf">0.25f</span><span class="o">,</span> <span class="mi">16</span><span class="o">);</span>
+		<span class="n">shapes</span><span class="o">.</span><span class="na">end</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nc">Vector3</span> <span class="n">tp</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Vector3</span><span class="o">();</span>
+	<span class="kt">boolean</span> <span class="n">dragging</span><span class="o">;</span>
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">mouseMoved</span> <span class="o">(</span><span class="kt">int</span> <span class="n">screenX</span><span class="o">,</span> <span class="kt">int</span> <span class="n">screenY</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// we can also handle mouse movement without anything pressed</span>
+<span class="c1">//		camera.unproject(tp.set(screenX, screenY, 0));</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">touchDown</span> <span class="o">(</span><span class="kt">int</span> <span class="n">screenX</span><span class="o">,</span> <span class="kt">int</span> <span class="n">screenY</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pointer</span><span class="o">,</span> <span class="kt">int</span> <span class="n">button</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// ignore if its not left mouse button or first touch pointer</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">button</span> <span class="o">!=</span> <span class="nc">Input</span><span class="o">.</span><span class="na">Buttons</span><span class="o">.</span><span class="na">LEFT</span> <span class="o">||</span> <span class="n">pointer</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="n">camera</span><span class="o">.</span><span class="na">unproject</span><span class="o">(</span><span class="n">tp</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">screenX</span><span class="o">,</span> <span class="n">screenY</span><span class="o">,</span> <span class="mi">0</span><span class="o">));</span>
+		<span class="n">dragging</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">touchDragged</span> <span class="o">(</span><span class="kt">int</span> <span class="n">screenX</span><span class="o">,</span> <span class="kt">int</span> <span class="n">screenY</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pointer</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(!</span><span class="n">dragging</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="n">camera</span><span class="o">.</span><span class="na">unproject</span><span class="o">(</span><span class="n">tp</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">screenX</span><span class="o">,</span> <span class="n">screenY</span><span class="o">,</span> <span class="mi">0</span><span class="o">));</span>
+		<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">touchUp</span> <span class="o">(</span><span class="kt">int</span> <span class="n">screenX</span><span class="o">,</span> <span class="kt">int</span> <span class="n">screenY</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pointer</span><span class="o">,</span> <span class="kt">int</span> <span class="n">button</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">button</span> <span class="o">!=</span> <span class="nc">Input</span><span class="o">.</span><span class="na">Buttons</span><span class="o">.</span><span class="na">LEFT</span> <span class="o">||</span> <span class="n">pointer</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="n">camera</span><span class="o">.</span><span class="na">unproject</span><span class="o">(</span><span class="n">tp</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">screenX</span><span class="o">,</span> <span class="n">screenY</span><span class="o">,</span> <span class="mi">0</span><span class="o">));</span>
+		<span class="n">dragging</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+		<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">resize</span> <span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// viewport must be updated for it to work properly</span>
+		<span class="n">viewport</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispose</span> <span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// disposable stuff must be disposed</span>
+		<span class="n">shapes</span><span class="o">.</span><span class="na">dispose</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">keyDown</span> <span class="o">(</span><span class="kt">int</span> <span class="n">keycode</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">keyUp</span> <span class="o">(</span><span class="kt">int</span> <span class="n">keycode</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">keyTyped</span> <span class="o">(</span><span class="kt">char</span> <span class="n">character</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">scrolled</span> <span class="o">(</span><span class="kt">int</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">arg</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">LwjglApplicationConfiguration</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LwjglApplicationConfiguration</span><span class="o">();</span>
+		<span class="n">config</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="mi">1280</span><span class="o">;</span>
+		<span class="n">config</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="mi">720</span><span class="o">;</span>
+		<span class="n">config</span><span class="o">.</span><span class="na">useHDPI</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="k">new</span> <span class="nf">LwjglApplication</span><span class="o">(</span><span class="k">new</span> <span class="nc">SimplerTouchTest</span><span class="o">(),</span> <span class="n">config</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="/wiki/configuration-and-querying">Prev</a></td>
+      <td><a href="/wiki/polling">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

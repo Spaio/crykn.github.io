@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Improving workflow with Gradle - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Improving workflow with Gradle">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/improving-workflow-with-gradle">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/improving-workflow-with-gradle">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Improving workflow with Gradle
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/improving-workflow-with-gradle.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <h1 id="contents">Contents</h1>
+
+<ul>
+  <li><a href="#introduction"><strong>Introduction</strong></a></li>
+  <li><a href="#tips-to-speed-up-gradle-if-you-still-want-ide-integration"><strong>Optimizing Gradle integration in your IDE and on the command line</strong></a></li>
+  <li><a href="#gradle-daemon"><strong>Gradle Daemon</strong></a></li>
+  <li><a href="#configuration-on-demand"><strong>Configuration on Demand</strong></a></li>
+  <li><a href="#how-to-remove-gradle-ide-integration-from-your-project"><strong>Removing Gradle integration from your IDE</strong></a></li>
+  <li><a href="#creating-your-idea-project"><strong>Intellij IDEA</strong></a></li>
+  <li><a href="#creating-your-eclipse-project"><strong>Eclipse</strong></a></li>
+  <li><a href="#libgdx-without-gradle"><strong>libGDX without Gradle</strong></a></li>
+  <li><a href="#why-does-libgdx-recommend-gradle"><strong>Why does libGDX recommend Gradle</strong></a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+<p>Gradle is very powerful, and once you get used to it is a great tool to be versed in and to have in your arsenal, but when mixed with your IDE it can cause workflow problems.  This varies from project to project, and from person to person; here is an example of such an issue:</p>
+
+<p>Having a multi-project, multi-flavour project, where you want to be running your desktop build very often to check your latest changes.  Due to how Gradle works (it allows the flexibility of accessing and changing any part of the build from any part of the project), it must configure all projects in a multi-project setup before any task is executed.  When you have a project with desktop only, this is usually very speedy, but when you add in an android project and a html project the setup time starts to rack up.  This is especially noticeable in Intellij IDEA.</p>
+
+<h2 id="tips-to-speed-up-gradle-if-you-still-want-ide-integration">Tips to speed up Gradle if you still want IDE integration</h2>
+
+<p>You can try a few things to get running more efficiently:</p>
+
+<h3 id="gradle-daemon">Gradle daemon</h3>
+<p>The Gradle daemon aims to lower execution time and startup time of tasks especially where tasks are executed frequently.</p>
+
+<p>You can run tasks with the daemon by adding the <code class="language-plaintext highlighter-rouge">--daemon</code> flag.</p>
+
+<p>You can also add the option to run on all tasks by editing a <code class="language-plaintext highlighter-rouge">gradle.properties</code> file that resides in the root directory of your project.
+Add the line: <code class="language-plaintext highlighter-rouge">org.gradle.daemon=true</code></p>
+
+<p><em>Further reading:</em>
+<em>Daemon http://www.gradle.org/docs/current/userguide/gradle_daemon.html</em></p>
+
+<h3 id="configuration-on-demand">Configuration on Demand</h3>
+<p>This setting helps to solve the issue of Gradle configuring the world before execution.  Using this setting, the root project is always configured, the project in the directory where the build is executed is configured, and only dependent projects are configured, resulting in much faster build times.</p>
+
+<p>To use this setting add the following to the <code class="language-plaintext highlighter-rouge">gradle.properties</code> file in the root directory of your project:
+Add the line; <code class="language-plaintext highlighter-rouge">org.gradle.configureondemand=true</code></p>
+
+<h2 id="how-to-remove-gradle-ide-integration-from-your-project">How to remove Gradle IDE integration from your project</h2>
+
+<p><em>Note: This only applies for Eclipse and Intellij IDEA users</em></p>
+
+<p>With the project that is generated from gdx-setup.jar, the Gradle IDEA, and Gradle Eclipse plugins are applied to all projects.
+These plugins allow you to generate IDE specific files that you can then work from.</p>
+
+<p>Doing this allows you to keep Gradle out of your IDE, so that when you want to launch any task, it won’t configure your whole project and will be as quick as if you had a regular IDE generated project.  This does mean that you need to sort out support for the sub modules in the IDE yourself, android support, robovm ect.  (It is still recommended that you do all GWT/html stuff from the command line, as well as using the great packaging tasks that are supplied)</p>
+
+<p>It also allows you to keep the power of Gradle at your disposal, to handle all your dependencies, packaging tasks, signing tasks, deployment and anything else you may want to implement by running from the command line.</p>
+
+<h3 id="creating-your-idea-project">Creating your IDEA project</h3>
+<p>From the command line, run the following command from your project root directory:
+(If on a UNIX based OS, use ./gradlew to invoke gradle)</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gradlew</span> <span class="n">idea</span>
+</code></pre></div></div>
+
+<p>In IDEA:
+File &gt; OPEN &gt; Locate the .ipr that the task above generates</p>
+<h3 id="creating-your-eclipse-project">Creating your Eclipse Project</h3>
+<p>From the command line, run the following command from your project root directory:
+(If on a UNIX based OS, use ./gradlew to invoke gradle)</p>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gradlew</span> <span class="n">eclipse</span>
+</code></pre></div></div>
+
+<p>In Eclipse:
+File &gt; Import &gt; Existing project into workspace &gt; Locate the .project file and import</p>
+
+<h2 id="libgdx-without-gradle">libGDX without Gradle</h2>
+
+<p>You are <strong>never</strong> forced to use Gradle, it is just recommended. If you want clarification on why it is recommended, check <a href="#why-does-libgdx-recommend-gradle">here</a>.</p>
+
+<p>If you don’t want to use Gradle, you have the following choices.</p>
+
+<ul>
+  <li>You can use the setup to create your project still and never touch Gradle again. Follow the guide from <a href="#how-to-remove-gradle-ide-integration-from-your-project">here</a> and never touch Gradle again.</li>
+  <li>You can setup your project manually.</li>
+  <li>You can maintain the old setup and use that to generate your projects.</li>
+</ul>
+
+<p>Doing any of the above will have the following consequences:</p>
+<ul>
+  <li>You no longer have access to packaging tasks, you will have to package and deploy your projects yourself</li>
+  <li>You will lose support for IDE’s other than IDEA and Eclipse</li>
+  <li>You install all the plugins required for your IDE to interpret each of the sub-projects</li>
+  <li>You manually update your dependencies from now on, don’t forget the platform specific natives too!</li>
+</ul>
+
+<h2 id="why-does-libgdx-recommend-gradle">Why does libGDX recommend Gradle</h2>
+
+<h4 id="support">Support</h4>
+<ul>
+  <li>Using Gradle, libGDX is supported regardless of what IDE you use, even if you don’t use one.  Your development environment doesn’t support Android/RoboVM/HTML/Java? Don’t worry, Gradle can compile/build/run/package your project no matter what you use to code with.</li>
+  <li>Having one unified system of managing your project makes it easy to get support from other users. The more people that are using the same approach, the larger the support user base grows.</li>
+</ul>
+
+<h4 id="dependency-management">Dependency Management</h4>
+<p>One of the biggest pros of any build/dependency management system.</p>
+<ul>
+  <li>Easy to understand</li>
+  <li>Insanely quick and simple to stay up to date with the latest LibGDX, update one line-refresh-done. No more jar hunting.</li>
+  <li>Transitive dependencies (Inherit dependencies from projects you depend on)</li>
+  <li>Custom dependency definitions, depend on anything!</li>
+  <li>Full compatibility with all repository types (Maven, Ivy, etc)</li>
+</ul>
+
+<h4 id="flexibility">Flexibility</h4>
+<p>Gradle is built with Ant and Maven very much in mind, and aims to combine the two to make a very powerful and flexible build automation tool.</p>
+<ul>
+  <li>Structure your build however you want, add custom tasks, use the rich API to completely customize your build to suit your needs</li>
+  <li>Want to run your project on a CI server? Just throw it up there install the jenkins Gradle plugin and you’re good to go</li>
+  <li>The Gradle Wrapper allows you to be free of installing Gradle!</li>
+</ul>
+
+<h4 id="maintainability">Maintainability</h4>
+<p>As libGDX grows, extensions are created from scratch or by removing them from core where appropriate, making libGDX more modular to avoid bloat when you don’t need those extensions. (This happened with Box2D). This means <strong>more</strong> dependencies for you to add and therefore more jars to add.  If you are using a minimalist project with no extensions, if you were to manually manage your dependencies that would mean 1 core dependency, 1 desktop dependency, 4 android dependencies, 4 ios dependencies and 3 gwt dependencies.</p>
+
+<p>That is 13 jars you need to track down every time you want to update to the latest libGDX with all the greatest new features.  If you use Box2D, Box2D lights, FreeType, etc. you are looking at a lot of dependencies which will quickly become very annoying to update and you will probably put off doing it. The setup has been built with this in mind, and makes it very quick to add these to your project and painless to update by changing one line with the power of Gradle.</p>
+
+<p>The setup itself is very simple, very transparent and maintainable by developers who didn’t create it.  This lowers the bus factor for libGDX and reduces strain when the setup requires an update/alteration.</p>
+
+<p>As previously mentioned, the Gradle project that is created by <strong>gdx-setup.jar</strong> includes tasks to run and package/distribute each project.  This allows libGDX to have a unified way of packaging your project, rather than x number of ways for y number of IDE’s.  This saves a lot of time in terms of writing documentation, following what every IDE is doing, and providing support on the forums; this gives developers more time to work on great features for libGDX to help make your project awesome.</p>
+
+<h4 id="it-revolutionizes-everything">It revolutionizes everything</h4>
+<p>Look down. Now look back up. Look down again. You’re sitting on a chair. Look back up. You aren’t using Gradle, your life is OK but it could be better. You read this article and you decide you want to use Gradle. You use the <strong>gdx-setup.jar</strong> to generate your project and you get tinkering with it.  You use the power of Gradle to create 500 flappy clones from the same source code. Look down again. Your chair is now made of gold and there are an infinite number of monkeys with keyboards coding for you. Your life is now better and you can concentrate on the things that matter.</p>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

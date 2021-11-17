@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Using libGDX with Kotlin - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Using libGDX with Kotlin">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/using-libgdx-with-kotlin">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/using-libgdx-with-kotlin">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Using libGDX with Kotlin
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/using-libgdx-with-kotlin.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <p><a href="https://kotlinlang.org" rel="external">Kotlin<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> is a modern statically typed JVM language from <a href="https://www.jetbrains.com" rel="external">JetBrains<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, the creators of <a href="https://www.jetbrains.com/idea/" rel="external">IntelliJ IDEA<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (Kotlin supports Eclipse too). If you’re a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has.</p>
+
+<p><em>Due to how GWT works, you will not be able to use the HTML5 target with Kotlin. This could be fixed in the future by using Kotlin’s JavaScript back-end.</em> It might be possible to utilize <a href="https://github.com/konsoletyper/teavm" rel="external">TeaVM<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> as a replacement for GWT, though.</p>
+
+<h1 id="about-the-kotlin-language">About the Kotlin language</h1>
+
+<p>Notable features:</p>
+
+<ul>
+  <li>Null-safe types (more compile-time errors instead of always runtime ones)</li>
+  <li>Higher-order functions</li>
+  <li>Lambdas that work well (closures, which Java doesn’t really have)</li>
+  <li>Cleaner syntax than Java (semi-colons are optional; <code class="language-plaintext highlighter-rouge">new</code> keyword isn’t there, because it’s unnecessary)</li>
+  <li>Extension functions (like C# has), so you can extend with static methods and create e.g. <code class="language-plaintext highlighter-rouge">"a string".myCustomFunction()</code>
+</li>
+  <li>String interpolation: <code class="language-plaintext highlighter-rouge">println("size is ${list.size} out of $maxElements")</code>
+</li>
+  <li>Operator overloading</li>
+  <li>Target Java 6 transparently, without the same loss of features like you get in Java. This makes it especially attractive for Android.</li>
+  <li>100% interoperable with your Java libraries, and even other Java source files in your project. Seamlessly. Has a button to convert existing Java code to Kotlin too.</li>
+  <li>Properties - no need to write boilerplate getters and setters</li>
+  <li>Ranges and range operator: <code class="language-plaintext highlighter-rouge">if (x in 0..10) println("in range!")</code>
+</li>
+  <li>Inlined methods, which make it possible to reduce method counts, as well as optimize methods using lambdas</li>
+  <li>And more - see language reference docs.</li>
+</ul>
+
+<p>It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It’s a more pragmatic language, rather than academic/forceful.</p>
+
+<p>See the <a href="https://kotlinlang.org/docs/reference/" rel="external">Kotlin Language Reference Docs<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> for deciding on and learning the language. You can also read the <a href="https://kotlinlang.org/docs/reference/comparison-to-java.html" rel="external">Kotlin comparison to Java<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<h1 id="migrating-an-existing-project-to-kotlin">Migrating an existing project to Kotlin</h1>
+
+<p>This guide describes how to migrate an existing libGDX project to Kotlin. You can also start with a <a href="https://libgdx.com/dev/project-generation/" rel="external">fresh application<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<ul>
+  <li>
+<a href="#configure-gradle">Configure Gradle</a>
+    <ul>
+      <li><a href="#set-up-the-kotlin-gradle-plugin">Setup the Kotlin Gradle plugin</a></li>
+      <li><a href="#apply-the-kotlin-gradle-plugin">Apply the Kotlin Gradle Plugin</a></li>
+      <li><a href="#configuring-dependencies">Configuring Dependencies</a></li>
+    </ul>
+  </li>
+  <li><a href="#convert-your-code-from-java-to-kotlin">Convert Your Code From Java to Kotlin</a></li>
+  <li><a href="#build-and-run">Build and Run</a></li>
+  <li><a href="#examples-of-libgdx-projects-using-kotlin">Examples of libGDX projects using Kotlin</a></li>
+</ul>
+
+<h2 id="configure-gradle">Configure Gradle</h2>
+
+<p>This step basically includes following the <a href="https://kotlinlang.org/docs/reference/using-gradle.html" rel="external">instructions from the official Kotlin manual<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<h3 id="set-up-the-kotlin-gradle-plugin">Set up the kotlin-gradle plugin</h3>
+
+<p>Add the following to your parent project’s <code class="language-plaintext highlighter-rouge">build.gradle</code>:</p>
+
+<pre><code class="language-Groovy">buildscript {
+    ext.kotlinVersion = '&lt;version to use&gt;'
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+</code></pre>
+
+<p>Since most likely you already got the <code class="language-plaintext highlighter-rouge">buildscript</code> block in your Gradle config, make sure to only add the sub-items accordingly.</p>
+
+<h3 id="apply-the-kotlin-gradle-plugin">Apply the kotlin-gradle plugin</h3>
+
+<p>Replace all occurrences of <code class="language-plaintext highlighter-rouge">apply plugin: "java"</code> with <code class="language-plaintext highlighter-rouge">apply plugin: "kotlin"</code>. Check your parent project’s <code class="language-plaintext highlighter-rouge">build.gradle</code> as well as your sub-projects (core, desktop, ios, android).</p>
+
+<p>In the android sub-project, add <code class="language-plaintext highlighter-rouge">apply plugin: "kotlin-android"</code> after the <code class="language-plaintext highlighter-rouge">apply plugin: "android"</code> line.</p>
+
+<h3 id="configuring-dependencies">Configuring Dependencies</h3>
+
+<p>Add Kotlin’s stdlib to your core project’s dependencies list:</p>
+
+<pre><code class="language-Groovy">dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+}
+</code></pre>
+
+<p>If you intend to use Kotlin’s reflection capabilities as well, add the respective library too:</p>
+
+<pre><code class="language-Kotlin">dependencies {
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+}
+</code></pre>
+
+<h4 id="note-for-intellij-users">Note for Intellij users</h4>
+
+<p>If you made Intellij automatically configure <code class="language-plaintext highlighter-rouge">build.gradle</code> for you, and chose Kotlin 1.1 or higher version, it might add this dependency:</p>
+
+<pre><code class="language-Kotlin">dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+}
+</code></pre>
+
+<p>If you’re targeting platforms that don’t support Java 8 library, such as most Android phones, it won’t compile. You may need to replace it with <code class="language-plaintext highlighter-rouge">kotlin-stdlib</code> library.</p>
+
+<h2 id="convert-your-code-from-java-to-kotlin">Convert your code from Java to Kotlin</h2>
+
+<p>You do not need to migrate all or any of your Java code right away. Both languages are fully interoperable with each other.</p>
+
+<p>However, if you decide to migrate your Java code to Kotlin, IntelliJ IDEA has a handy function for that.</p>
+
+<p>Open any Java file, e.g. your <code class="language-plaintext highlighter-rouge">DesktopLauncher</code> and select <em>Code → Convert Java File to Kotlin File</em> from the menu. Repeat this process for every file you want to migrate. While it is still in its infancy so it won’t be error proof, but it will help you come up with more idiomatic ways of coding your project. There will be some errors, specifically with some <code class="language-plaintext highlighter-rouge">Class&lt;&gt;</code> usage, and Java code that it could not deduce null safety (because that information is lacking from Java).</p>
+
+<h2 id="build-and-run">Build and run</h2>
+
+<p>That’s it. You successfully enabled Kotlin in your libGDX application. Build and run your project to verify that everything works.</p>
+
+<h2 id="kotlin-libgdx-extensions">Kotlin libGDX extensions</h2>
+
+<ul>
+  <li>
+<a href="https://github.com/libktx/ktx" rel="external">KTX<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> is a set of libraries that aim to make most aspects of libGDX more Kotlin-friendly thanks to extension functions, utility classes and so on. It includes utilities for assets management, LibGDX custom collections, Box2D, coroutines, math-related classes, actors, i18n, dependency injection, GUI type-safe building and more.</li>
+</ul>
+
+<h1 id="examples-of-libgdx-projects-using-kotlin">Examples of libGDX projects using Kotlin</h1>
+
+<p>These are some examples of projects that are using Kotlin, to help give you ideas on how to structure, take advantage of language features, as well as simple stuff such as build system.</p>
+
+<ul>
+  <li>
+<a href="https://github.com/sreich/ore-infinium" rel="external">Ore Infinium<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (desktop, moderate size, uses artemis-odb, kryonet, ktx, protobuf)</li>
+  <li>
+<a href="https://github.com/TobseF/hitklack" rel="external">HitKlack<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (desktop &amp; android, small size, code examples to explain Kotlin’s features)</li>
+  <li>
+<a href="https://github.com/reime005/splintersweets" rel="external">SplinterSweets<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (desktop, android, iOS (Multi-OS Engine), Google Play Games and Admob integration, small sized and simple)</li>
+  <li>
+<a href="https://github.com/czyzby/egu2016" rel="external">Herring.io<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, <a href="https://github.com/czyzby/egu-2016" rel="external">Neighbourhood Watch<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (desktop, made by a single team in under 30 hours using <a href="https://github.com/libktx/ktx" rel="external">KTX<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> on <em>EGU Jam 2016</em>)</li>
+  <li>
+<a href="https://github.com/czyzby/bialjam17" rel="external">Horde!<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (desktop, made in under 40 hours, won BialJam 2017)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+<a href="https://github.com/haxpor/blockbunny" rel="external">BlockBunny<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (desktop (with controller support), android, iOS (Multi-OS Engine)</td>
+          <td>with optimization, changes and improvement from original ForeignGuyMike’s tutorial video)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+<a href="https://github.com/haxpor/omo" rel="external">OMO<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (PC, Android, and iOS (Multi-OS Engine)</td>
+          <td>with changes and improvements on top of ForeignGuyMike’s original project)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+<a href="https://github.com/haxpor/asteroids" rel="external">Asteroids<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (PC, Android, and iOS (Multi-OS Engine)</td>
+          <td>gamepad support, with changes and improvements on top of ForeignGuyMike’s original project)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+<a href="https://github.com/yairm210/Unciv" rel="external">Unciv<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> (PC, Android</td>
+          <td>Open-source Android/Desktop remake of Civ V)</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

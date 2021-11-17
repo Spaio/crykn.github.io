@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>2D ParticleEffects - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="2D ParticleEffects">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/2d-particleeffects">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/2d-particleeffects">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">2D ParticleEffects
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/2d-particleeffects.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <ul>
+  <li><a href="#basic-particleeffect-usage">Basic ParticleEffect usage</a></li>
+  <li><a href="#efficiency">Efficiently using ParticleEffects</a></li>
+  <li>
+<a href="#examples">Examples</a>
+    <ul>
+      <li><a href="#pooled-effect-example">Pooled Effect example</a></li>
+      <li><a href="#batched-effect-example">Batched Effect example</a></li>
+    </ul>
+  </li>
+  <li><a href="#video-example">Video example</a></li>
+</ul>
+
+<h1 id="basic-particleeffect-usage">Basic ParticleEffect usage</h1>
+<p>Using Particle effects is easy, load up your particle that has been generated in the <a href="https://github.com/libgdx/libgdx/wiki/2D-Particle-Editor" rel="external">ParticleEditor<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">TextureAtlas</span> <span class="n">particleAtlas</span><span class="o">;</span> <span class="c1">//&lt;-load some atlas with your particle assets in</span>
+<span class="nc">ParticleEffect</span> <span class="n">effect</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ParticleEffect</span><span class="o">();</span>
+<span class="n">effect</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="nc">Gdx</span><span class="o">.</span><span class="na">files</span><span class="o">.</span><span class="na">internal</span><span class="o">(</span><span class="s">"myparticle.p"</span><span class="o">),</span> <span class="n">particleAtlas</span><span class="o">);</span>
+<span class="n">effect</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+<span class="c1">//Setting the position of the ParticleEffect</span>
+<span class="n">effect</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+
+<span class="c1">//Updating and Drawing the particle effect</span>
+<span class="c1">//Delta being the time to progress the particle effect by, usually you pass in Gdx.graphics.getDeltaTime();</span>
+<span class="n">effect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span>
+
+</code></pre></div></div>
+
+<h1 id="efficiency">Efficiency</h1>
+<p>Rendering particles is great, rendering lots of particles is even better, here is how you do it without melting your users devices.</p>
+
+<p>ParticleEffects are no different than Sprites, in fact they <a href="https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/ParticleEmitter.java#L98" rel="external">ARE<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> sprites.  Take everything you know already about efficiently rendering sprites and carry them across.</p>
+
+<ul>
+  <li>Use an atlas!</li>
+</ul>
+
+<p>If your particle effect sprite shares a texture with all of your other gameplay assets, or at least the ones that are being batched together, you wont have to switch
+ textures, which causes the Batch to flush.  You don’t want the batch to flush too often as its an expensive operation, and you won’t get the most out of your Batch.</p>
+
+<ul>
+  <li>Pool your effects</li>
+</ul>
+
+<p>Creating new ParticleEffects willy nilly? Great, now stop doing that and use a Pool! Unfortunately garbage collection degrades the performance of your game, especially on the mobile platforms, so you want to avoid garbage at all costs.  Use of the <code class="language-plaintext highlighter-rouge">ParticleEffectPool</code> completely mitigates garbage generation as you will be reusing your <code class="language-plaintext highlighter-rouge">ParticleEffect</code> when you are finished with them.  No more wasted memory! No more garbage collection</p>
+
+<p>In simple terms, grab a new object from the Pool, use it, when you are finished, return it so you can use it again.</p>
+
+<p>See <a href="#pooled-effect-example">the example below</a> for how to implement pooling.</p>
+
+<ul>
+  <li>
+    <p>Batch your effects
+Draw all your ParticleEffects that have the same Textures/blend modes together.  We don’t want to interrupt the Batch, which means no texture swapping, no blend state changing. This gets the most out of our Batch, and keeps our device happy.</p>
+
+    <p>If you have ParticleEffects that have different blending, for example some may have Additive, and others dont, group them together when you draw so you only swap the blend mode once.</p>
+
+    <p>This also applies to ParticleEffects that may have a <code class="language-plaintext highlighter-rouge">Sprite</code> that belongs to a different <code class="language-plaintext highlighter-rouge">Texture</code> than another effect.  Draw all your instances that use the same Texture first, then the rest.  If you interleave these ParticleEffects with different Textures, you will be causing lots of draw calls.
+See <a href="#batched-effect-example">the example below</a> for how to implement batching.</p>
+  </li>
+  <li>
+    <p>Clean up the blend modes yourself
+Particles that have Additive Blending will change the state of the <code class="language-plaintext highlighter-rouge">Batch</code>. By default the ParticleEffect returns the Batch’s state to the original state it was in, so the following draws are not effected by the ParticleEffect’s blend mode.  This is great, apart from if you want to draw multiple ParticleEffect instances, as this will change the blend mode after EACH instance is drawn, resulting in a draw call.</p>
+
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">//original blendstate</span>
+<span class="n">additiveParticleEffect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span> <span class="c1">//set the blend state to additive, (flushes the batch)</span>
+<span class="c1">//additiveParticleEffect will then reset the batch to the original blend state (flushes the batch)</span>
+<span class="c1">//repeat</span>
+<span class="c1">//original blendstate</span>
+<span class="n">additiveParticleEffect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span> <span class="c1">//set the blend state to additive, (flushes the batch)</span>
+<span class="c1">//additiveParticleEffect will then reset the batch to the original blend state (flushes the batch)</span>
+<span class="c1">//repeat</span>
+</code></pre></div>    </div>
+
+    <p>To avoid this, we can use ParticleEffect’s <code class="language-plaintext highlighter-rouge">setEmittersCleanUpBlendFunction</code> function, and set it to false.  This will prevent the ParticleEffect from resetting the blend mode to the original, and avoiding the extra flush of the Batch.</p>
+
+    <div class="language-java highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">//original blendstate</span>
+<span class="n">additiveParticleEffect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span> <span class="c1">//set the blend state to additive, (flushes the batch)</span>
+<span class="c1">//blendstate is now additive</span>
+<span class="c1">//repeat</span>
+<span class="c1">//additive blendstate</span>
+<span class="n">additiveParticleEffect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span> <span class="c1">//already additive, no state change (no flush)</span>
+<span class="c1">//repeat</span>
+</code></pre></div>    </div>
+
+    <p>This is great, efficiently drawing lots of ParticleEffects with the same blend state! Be careful with this function, you are now in charge of returning the Batch’s blend state to the original, so you must do this after you are finished drawing all your particles.</p>
+  </li>
+</ul>
+
+<h1 id="examples">Examples</h1>
+
+<p>For a collection of community created particle effects for LibGDX see the <a href="https://github.com/raeleus/Particle-Park" rel="external">Particle Park<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a><br>
+A coding example is available on <a href="https://libgdx.info/particleeffect/" rel="external">LibGDX.info<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+<h2 id="pooled-effect-example">Pooled effect example:</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">ParticleEffectPool</span> <span class="n">bombEffectPool</span><span class="o">;</span>
+<span class="nc">Array</span><span class="o">&lt;</span><span class="nc">PooledEffect</span><span class="o">&gt;</span> <span class="n">effects</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Array</span><span class="o">();</span>
+
+<span class="c1">//...</span>
+
+<span class="c1">//Set up the particle effect that will act as the pool's template</span>
+<span class="nc">ParticleEffect</span> <span class="n">bombEffect</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ParticleEffect</span><span class="o">();</span>
+<span class="n">bombEffect</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="nc">Gdx</span><span class="o">.</span><span class="na">files</span><span class="o">.</span><span class="na">internal</span><span class="o">(</span><span class="s">"particles/bomb.p"</span><span class="o">),</span> <span class="n">atlas</span><span class="o">);</span>
+
+<span class="c1">//If your particle effect includes additive or pre-multiplied particle emitters</span>
+<span class="c1">//you can turn off blend function clean-up to save a lot of draw calls, but</span>
+<span class="c1">//remember to switch the Batch back to GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA</span>
+<span class="c1">//before drawing "regular" sprites or your Stage.</span>
+<span class="n">bombEffect</span><span class="o">.</span><span class="na">setEmittersCleanUpBlendFunction</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+
+<span class="n">bombEffectPool</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ParticleEffectPool</span><span class="o">(</span><span class="n">bombEffect</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+
+<span class="c1">// Create effect:</span>
+<span class="nc">PooledEffect</span> <span class="n">effect</span> <span class="o">=</span> <span class="n">bombEffectPool</span><span class="o">.</span><span class="na">obtain</span><span class="o">();</span>
+<span class="n">effect</span><span class="o">.</span><span class="na">setPosition</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+<span class="n">effects</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">effect</span><span class="o">);</span>
+
+
+<span class="c1">// Update and draw effects:</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">effects</span><span class="o">.</span><span class="na">size</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+	<span class="nc">PooledEffect</span> <span class="n">effect</span> <span class="o">=</span> <span class="n">effects</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+	<span class="n">effect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">effect</span><span class="o">.</span><span class="na">isComplete</span><span class="o">())</span> <span class="o">{</span>
+		<span class="n">effect</span><span class="o">.</span><span class="na">free</span><span class="o">();</span>
+		<span class="n">effects</span><span class="o">.</span><span class="na">removeIndex</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//...</span>
+
+<span class="c1">// Reset all effects:</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">effects</span><span class="o">.</span><span class="na">size</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span>
+    <span class="n">effects</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">free</span><span class="o">();</span> <span class="c1">//free all the effects back to the pool</span>
+<span class="n">effects</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span> <span class="c1">//clear the current effects array</span>
+</code></pre></div></div>
+
+<h2 id="batched-effect-example">Batched effect example:</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Array</span><span class="o">&lt;</span><span class="nc">PooledEffect</span><span class="o">&gt;</span> <span class="n">additiveEffects</span><span class="o">;</span>
+<span class="nc">Array</span><span class="o">&lt;</span><span class="nc">PooledEffect</span><span class="o">&gt;</span> <span class="n">normalEffects</span><span class="o">;</span>
+
+<span class="nc">ParticleEffect</span> <span class="n">additiveEffect</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ParticleEffect</span><span class="o">();</span>
+<span class="n">additiveEffect</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="c1">//...);</span>
+<span class="n">additiveEffect</span><span class="o">.</span><span class="na">setEmittersCleanUpBlendFunction</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span> <span class="c1">//Stop the additive effect restting the blend state</span>
+
+<span class="n">batch</span><span class="o">.</span><span class="na">begin</span><span class="o">();</span>
+<span class="c1">//draw all additive blended effects</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">PooledEffect</span> <span class="n">additiveEffect</span> <span class="o">:</span> <span class="n">additiveEffects</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">additiveEffect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">//We need to reset the batch to the original blend state as we have setEmittersCleanUpBlendFunction as false in additiveEffect</span>
+<span class="n">batch</span><span class="o">.</span><span class="na">setBlendFunction</span><span class="o">(</span><span class="no">GL20</span><span class="o">.</span><span class="na">GL_SRC_ALPHA</span><span class="o">,</span> <span class="no">GL20</span><span class="o">.</span><span class="na">GL_ONE_MINUS_SRC_ALPHA</span><span class="o">);</span>
+<span class="c1">//draw all 'normal alpha' blended effects</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">PooledEffect</span> <span class="n">normalEffect</span> <span class="o">:</span> <span class="n">normalEffects</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">normalEffect</span><span class="o">.</span><span class="na">draw</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">delta</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="n">batch</span><span class="o">.</span><span class="na">end</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h2 id="video-example">video-example</h2>
+
+<ul>
+  <li><a href="https://libgdx.info/particleeffect/" rel="external">Particle Effect Example on LibGDX.info<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+  <li>
+<a href="https://bitbucket.org/dermetfan/somelibgdxtests/src/207cfc0a6123b48200d5cf721df222cbe7faf1be/src/net/dermetfan/someLibgdxTests/screens/ParticleEffectsTutorial.java?at=default" rel="external">source<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> of the video</li>
+  <li>
+<a href="https://bitbucket.org/dermetfan/somelibgdxtests/src/4582a1bf94bded4f30df47b9195d1ae14728b847/src/net/dermetfan/someLibgdxTests/screens/ParticleEffectsTutorial.java?at=default" rel="external">source<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> of the video using <a href="https://www.youtube.com/watch?v=3OwIiELYa70" rel="external">pooling<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+</li>
+</ul>
+
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=LCLa-rgR_MA%20" target="_blank" rel="external"><img src="http://img.youtube.com/vi/LCLa-rgR_MA/0.jpg" alt="libgdx 2D Particle Effects" width="480" height="360" border="10"><span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></p>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

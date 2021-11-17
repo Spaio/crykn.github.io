@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Querying and Configuring Graphics (monitors, display modes, vsync, display cutouts) - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="Querying and Configuring Graphics (monitors, display modes, vsync, display cutouts)">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/querying-and-configuring-graphics">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/querying-and-configuring-graphics">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">Querying and Configuring Graphics (monitors, display modes, vsync, display cutouts)
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts).md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <h1 id="configuration--querying">Configuration &amp; querying</h1>
+<p>libGDX has an elaborate API that lets you query monitors and display modes, and toggle vertical synchronization (vsync). This can be done either when configuring your application, or at runtime. <strong>Note: Display mode changes are not supported by Android, iOS or HTML5.</strong></p>
+
+<h2 id="querying-and-setting-monitors--display-modes-at-configuration-time">Querying and setting monitors &amp; display modes at configuration time</h2>
+<p>Querying monitors and display modes at configuration time is platform specific. The following subsections illustrate what you can do on each platform with regards to monitors and display modes.</p>
+
+<h3 id="lwjgl-backend">LWJGL backend</h3>
+<p>Using the default LWJGL 2 backend, you can get the available display modes for the primary monitor as follows:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span><span class="o">[]</span> <span class="n">modes</span> <span class="o">=</span> <span class="nc">LwjglApplicationConfiguration</span><span class="o">.</span><span class="na">getDisplayModes</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>You can get the current display mode of the primary monitor (also known as desktop mode) as follows:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span> <span class="n">desktopMode</span> <span class="o">=</span> <span class="nc">LwjglApplicationConfiguration</span><span class="o">.</span><span class="na">getDesktopDisplayMode</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>Once you have a <code class="language-plaintext highlighter-rouge">DisplayMode</code>, you can set it on the <code class="language-plaintext highlighter-rouge">LwjglApplicationConfiguration</code>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span> <span class="n">displayMode</span> <span class="o">=</span> <span class="nc">LwjglApplicationConfiguration</span><span class="o">.</span><span class="na">getDesktopDisplayMode</span><span class="o">();</span>
+<span class="nc">LwjglApplicationConfiguration</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LwjglApplicationConfiguration</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setFromDisplayMode</span><span class="o">(</span><span class="n">displayMode</span><span class="o">);</span>
+<span class="k">new</span> <span class="nf">LwjglApplication</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyAppListener</span><span class="o">(),</span> <span class="n">config</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Your app will be started in full-screen mode, using the resolution found in the <code class="language-plaintext highlighter-rouge">DisplayMode</code> object.</p>
+
+<p>To start your app in windowed mode, simply specify the width and height of the window:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">LwjglApplicationConfiguration</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LwjglApplicationConfiguration</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="mi">800</span><span class="o">;</span>
+<span class="n">config</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="mi">600</span><span class="o">;</span>
+<span class="k">new</span> <span class="nf">LwjglApplication</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyAppListener</span><span class="o">(),</span> <span class="n">config</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>You can also position the window on the primary monitor by specifying its top-left corner coordinate relative to the monitors current display mode:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+<span class="n">config</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>To center your window, use -1 for the coordinates (the default).</p>
+
+<p>Finally, you can also specify whether your app should start with vsync enabled or not:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">vSyncEnabled</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>Disabling vsync will allow your your app to run above your monitor’s refresh rate, provided <code class="language-plaintext highlighter-rouge">foregroundFPS</code> has been set accordingly.</p>
+
+<h3 id="lwjgl-3-backend">LWJGL 3 backend</h3>
+<p>The LWJGL 3 backend is much more elaborate when it comes to monitors and display modes. Unlike the LWJGL 2 backend, it supports multi-monitor setups.</p>
+
+<p>Querying all available monitors at configuration time works like this:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Monitor</span><span class="o">[]</span> <span class="n">monitors</span> <span class="o">=</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">.</span><span class="na">getMonitors</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>To get the primary monitor, call:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Monitor</span> <span class="n">primary</span> <span class="o">=</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">.</span><span class="na">getPrimaryMonitor</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>To get all supported display modes of a monitor, call:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span><span class="o">[]</span> <span class="n">displayModes</span> <span class="o">=</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">.</span><span class="na">getDisplayModes</span><span class="o">(</span><span class="n">monitor</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>To get the current display mode of a monitor, call:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span> <span class="n">desktopMode</span> <span class="o">=</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">.</span><span class="na">getDisplayMode</span><span class="o">(</span><span class="n">monitor</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>There are shorthands for getting the display modes of the primary monitor as well:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span><span class="o">[]</span> <span class="n">primaryDisplayModes</span> <span class="o">=</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">.</span><span class="na">getDisplayModes</span><span class="o">();</span>
+<span class="nc">DisplayMode</span> <span class="n">primaryDesktopMode</span> <span class="o">=</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">.</span><span class="na">getDisplayMode</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>With a display mode in hand, you can set it on the <code class="language-plaintext highlighter-rouge">Lwjgl3ApplicationConfiguration</code>:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span> <span class="n">primaryMode</span> <span class="o">=</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">.</span><span class="na">getDisplayMode</span><span class="o">();</span>
+<span class="nc">Lwjgl3ApplicationConfiguration</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setFullscreenMode</span><span class="o">(</span><span class="n">primaryMode</span><span class="o">);</span>
+<span class="k">new</span> <span class="nf">Lwjgl3ApplicationConfiguration</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyAppListener</span><span class="o">(),</span> <span class="n">config</span><span class="o">);</span>
+</code></pre></div></div>
+<p>This will start your app in full-screen mode on the primary monitor, using that monitor’s current resolution. If you pass a display mode from a different monitor, the app will be started in full-screen mode on that montior. <strong>Note: it is recommended to always use the current display mode of a monitor. Other display modes may fail.</strong></p>
+
+<p>To start your app in windowed mode, call this method on the configuration:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Lwjgl3ApplicationConfiguration</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setWindowedMode</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="mi">600</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>This will start your app in windowed mode on the primary monitor. To set the position of your window call:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">setWindowPosition</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>This will position the window’s top-left corner at the coordinates <code class="language-plaintext highlighter-rouge">100,100</code> relative to the virtual surface all your monitors span. To check the position of a monitor, simply access it’s <code class="language-plaintext highlighter-rouge">virtualX</code> and <code class="language-plaintext highlighter-rouge">virtualY</code> members. These coordinates are also relative to the virtual surface your monitors span. By positioning your window relative to these coordinates, you can move a window to that specific monitor.</p>
+
+<p>You can also specify if your window should be resizable and whether it has decoration (window title bar, borders):</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">setResizable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setDecorated</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>The LWJGL 3 backend also allows you to specify how to deal with HDPI monitors. The operating system may report logical sizes and coordinates instead of pixel-based coordinates to you for drawing surface sizes or mouse events. E.g. on a Macbook Pro with a retina display running Mac OS X, the OS reports only half the width/height of the underlying pixel surface. The LWJGL 3 backend can report drawing surface sizes as returned by <code class="language-plaintext highlighter-rouge">Gdx.graphics.getWidth()/getHeight()</code> and mouse coordinates either in those logical coordinates, or in pixel coordinates. To configure this behaviour, set a HDPI mode:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">setHdpiMode</span><span class="o">(</span><span class="nc">HdpiMode</span><span class="o">.</span><span class="na">Logical</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>This will report mouse coordinates and drawing surface sizes in logical coordinates. It is also the default for this backend. If you want to work in raw pixels, use <code class="language-plaintext highlighter-rouge">HdpiMode.Pixels</code>. Note that when using logical coordinates, you will have to convert these to pixel coordinates for OpenGL functions like <code class="language-plaintext highlighter-rouge">glScissor</code>, <code class="language-plaintext highlighter-rouge">glViewport</code> or <code class="language-plaintext highlighter-rouge">glReadPixels</code>. All libGDX classes calling these functions will take into account the <code class="language-plaintext highlighter-rouge">HdpiMode</code> you set. If you call these functions yourself, use <code class="language-plaintext highlighter-rouge">HdpiUtils</code>.</p>
+
+<h2 id="querying-and-setting-monitors--display-modes-at-runtime">Querying and setting monitors &amp; display modes at runtime</h2>
+<p>libGDX provides an API via the <code class="language-plaintext highlighter-rouge">Graphics</code> interface that lets you query monitors, display modes and other related aspects at runtime. Once you know about possible configurations, you can set them, e.g. switch to full-screen mode, or toggle vsync.</p>
+
+<h3 id="checking-if-display-mode-changes-are-supported">Checking if display mode changes are supported</h3>
+<p>Only a subset of platforms supports display mode changes. Notably, Android and iOS do not support switching to arbitrary full-screen display modes. It is therefor good practice to check if the platform your application currently runs on supports display mode changes:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="o">(</span><span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">supportsDisplayModeChange</span><span class="o">())</span> <span class="o">{</span>
+   <span class="c1">// change display mode if necessary</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>Note that all display mode related functions in <code class="language-plaintext highlighter-rouge">Graphics</code> will simply not do anything on platforms that don’t support display mode changes.</p>
+
+<h3 id="querying-monitors">Querying monitors</h3>
+<p>To query all connected monitors, use this method:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Monitor</span><span class="o">[]</span> <span class="n">monitors</span> <span class="o">=</span> <span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">getMonitors</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>On Android, iOS, GWT and the LWJGL 2 backend, only the primary monitor will be reported. The LWJGL 3 backend reports all connected monitors.</p>
+
+<p>To query the primary monitor, use:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Monitor</span> <span class="n">primary</span> <span class="o">=</span> <span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">getPrimaryMonitor</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>To query the monitor the window is currently on, use:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Monitor</span> <span class="n">currMonitor</span> <span class="o">=</span> <span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">getMonitor</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>It is good practice to toggle full-screen on the monitor the window is on, instead of say the primary monitor. This allows users to move the application window to another monitor, and then enable full-screen mode there.</p>
+
+<h3 id="querying-display-modes">Querying display modes</h3>
+<p>Once you have a <code class="language-plaintext highlighter-rouge">Monitor</code> instance, you can query its supported display modes:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span><span class="o">[]</span> <span class="n">modes</span> <span class="o">=</span> <span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">getDisplayModes</span><span class="o">(</span><span class="n">monitor</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>To get the current display mode, use this method:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">DisplayMode</span> <span class="n">currMode</span> <span class="o">=</span> <span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">getDisplayMode</span><span class="o">(</span><span class="n">monitor</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="switching-to-full-screen-mode">Switching to full-screen mode</h3>
+<p>With a <code class="language-plaintext highlighter-rouge">DisplayMode</code> from a specific <code class="language-plaintext highlighter-rouge">Monitor</code>, you can switch to full-screen as follows:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Monitor</span> <span class="n">currMonitor</span> <span class="o">=</span> <span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">getMonitor</span><span class="o">();</span>
+<span class="nc">DisplayMode</span> <span class="n">displayMode</span> <span class="o">=</span> <span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">getDisplayMode</span><span class="o">(</span><span class="n">currMonitor</span><span class="o">);</span>
+<span class="k">if</span><span class="o">(!</span><span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">setFullscreenMode</span><span class="o">(</span><span class="n">displayMode</span><span class="o">))</span> <span class="o">{</span>
+   <span class="c1">// switching to full-screen mode failed</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>If the switch to full-screen mode failed, the backend will restore the last windowed-mode configuration.</p>
+
+<h3 id="switching-to-windowed-mode">Switching to windowed mode</h3>
+<p>To change the size of a window, or to switch from full-screen mode to windowed mode, use this method:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">.</span><span class="na">setWindowedMode</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="mi">600</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>This will set the window to windowed mode, centering it on the monitor it was on before the call to this method.</p>
+
+<h2 id="querying-display-cutouts-on-mobile">Querying display cutouts on mobile</h2>
+<p>On Android and iOS, displays don’t have to be a perfect rectangle but might have cutouts, round edges or overlaying status bars. You can query the areas that are not safe to use for your important game content with the <code class="language-plaintext highlighter-rouge">Gdx.graphics.getSafeInsetLeft()</code>, <code class="language-plaintext highlighter-rouge">Gdx.graphics.getSafeInsetRight()</code>, <code class="language-plaintext highlighter-rouge">Gdx.graphics.getSafeInsetTop()</code> and <code class="language-plaintext highlighter-rouge">Gdx.graphics.getSafeInsetBottom()</code> methods.</p>
+
+<h2 id="desktop--multi-window-api-of-the-lwjgl-3-backend">Desktop &amp; multi-window API of the LWJGL 3 backend</h2>
+<p>Some applications like editors or other desktop-only tools can benefit from multi-window setups. The LWJGL 3 backend provides an additional, non-cross-platform API to create multiple windows.</p>
+
+<p>Every application starts with one window that is set up during configuration time:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Lwjgl3ApplicationConfiguration</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Lwjgl3ApplicationConfiguration</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setWindowedMode</span><span class="o">(</span><span class="mi">800</span><span class="o">,</span> <span class="mi">600</span><span class="o">);</span>
+<span class="k">new</span> <span class="nf">Lwjgl3ApplicationConfiguration</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyMainWindowListener</span><span class="o">(),</span> <span class="n">config</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>In this example, the window is driven by <code class="language-plaintext highlighter-rouge">MyMainWindowListener</code>, a standard <code class="language-plaintext highlighter-rouge">ApplicationListener</code>. libGDX does not report events like iconification or focus loss directly. For this, the LWJGL 3 backend introduces a desktop specific interface called <code class="language-plaintext highlighter-rouge">Lwjgl3WindowListener</code>. You can provide an implementation of this interface to receive and react to such events:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">setWindowListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">Lwjgl3WindowListener</span><span class="o">()</span> <span class="o">{</span>
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">iconified</span><span class="o">()</span> <span class="o">{</span>
+      <span class="c1">// the window is not visible anymore, potentially stop background</span>
+      <span class="c1">// work, mute audio, etc.</span>
+   <span class="o">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deiconified</span><span class="o">()</span> <span class="o">{</span>
+      <span class="c1">// the window is visible again, start-up background work, unmute</span>
+      <span class="c1">// audio, etc.</span>
+   <span class="o">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">focusLost</span><span class="o">()</span> <span class="o">{</span>
+      <span class="c1">// the window lost focus, pause the game</span>
+   <span class="o">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">focusGained</span><span class="o">()</span> <span class="o">{</span>
+      <span class="c1">// the window received input focus, unpause the game</span>
+   <span class="o">}</span>
+
+   <span class="nd">@Override</span>
+   <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">windowIsClosing</span><span class="o">()</span> <span class="o">{</span>
+      <span class="c1">// if there's unsaved stuff, we may not want to close</span>
+      <span class="c1">// the window, but ask the user to save her work</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">isStuffUnsaved</span><span class="o">)</span> <span class="o">{</span>
+         <span class="c1">// tell our app listener to show a save dialog</span>
+         <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+         <span class="c1">// OK, the window may close</span>
+         <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+      <span class="o">}</span>
+<span class="o">});</span>
+</code></pre></div></div>
+
+<p>The LWJGL 3 backend does not report pause and resume events if the window loses focus. It will only report pause and resume events in case the app is iconfified/deiconified, or if the app is being closed.</p>
+
+<p>To spawn additional windows, your code needs to cast <code class="language-plaintext highlighter-rouge">Gdx.app</code> to <code class="language-plaintext highlighter-rouge">Lwjgl3Application</code>. This is only possible if your project directly depends on the LWJGL 3 backend. You will not be able to share such code with other platforms. Once you have an <code class="language-plaintext highlighter-rouge">Lwjgl3Application</code>, you can create a new window like this:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Lwjgl3Application</span> <span class="n">lwjgl3App</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Lwjgl3Application</span><span class="o">)</span><span class="nc">Gdx</span><span class="o">.</span><span class="na">app</span><span class="o">;</span>
+<span class="nc">Lwjgl3WindowConfiguration</span> <span class="n">windowConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Lwjgl3WindowConfiguration</span><span class="o">();</span>
+<span class="n">windowConfig</span><span class="o">.</span><span class="na">setWindowListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyWindowListener</span><span class="o">());</span>
+<span class="n">windowConfig</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"My other window"</span><span class="o">);</span>
+<span class="nc">Lwjgl3Window</span> <span class="n">window</span> <span class="o">=</span> <span class="nc">Lwjgl3App</span><span class="o">.</span><span class="na">newWindow</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyOtherWindowAppListener</span><span class="o">(),</span> <span class="n">windowConfig</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>It is recommended to let every window have its own <code class="language-plaintext highlighter-rouge">ApplicationListener</code>. All windows of an application are updated on the same thread, one after the other. The LWJGL 3 backend will ensure that the statics <code class="language-plaintext highlighter-rouge">Gdx.graphics</code> and <code class="language-plaintext highlighter-rouge">Gdx.input</code> are setup for the window that’s currently being updated. This means that your <code class="language-plaintext highlighter-rouge">ApplicationListener</code> can essentially ignore the other windows, and pretend it’s the only listener in town.</p>
+
+<p>There is one exception to this. When using <code class="language-plaintext highlighter-rouge">Gdx.app.postRunnable()</code>, the LWJGL 3 backend can not decide for which window the <code class="language-plaintext highlighter-rouge">Runnable</code> has been posted. E.g. the method may have been called from a worker thread, and by the time the <code class="language-plaintext highlighter-rouge">Runnable</code> is posted, a different window may currently be updated. To fix this, it is recommended to post window-specific <code class="language-plaintext highlighter-rouge">Runnable</code> instances directly to the window:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// e.g. in a worker thread</span>
+<span class="n">window</span><span class="o">.</span><span class="na">postRunnable</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyRunnable</span><span class="o">());</span>
+</code></pre></div></div>
+
+<p>This ensures that the statics <code class="language-plaintext highlighter-rouge">Gdx.graphics</code> and <code class="language-plaintext highlighter-rouge">Gdx.input</code> will be setup for the specific window when the <code class="language-plaintext highlighter-rouge">Runnable</code> is executed.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Lwjgl3Window</code> class has additional methods that let you modify the window’s properties. You can fetch the current window in your <code class="language-plaintext highlighter-rouge">ApplicationListener</code>, then proceed to modify it:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in ApplicationListener#render()</span>
+<span class="nc">Lwjgl3Window</span> <span class="n">window</span> <span class="o">=</span> <span class="o">((</span><span class="nc">Lwjgl3Graphics</span><span class="o">)</span><span class="nc">Gdx</span><span class="o">.</span><span class="na">graphics</span><span class="o">).</span><span class="na">getWindow</span><span class="o">();</span>
+<span class="n">window</span><span class="o">.</span><span class="na">setVisible</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span> <span class="c1">// hide the window</span>
+<span class="n">window</span><span class="o">.</span><span class="na">iconifyWindow</span><span class="o">();</span> <span class="c1">// iconify the window</span>
+<span class="n">window</span><span class="o">.</span><span class="na">deiconifyWindow</span><span class="o">();</span> <span class="c1">// deiconify window</span>
+<span class="n">window</span><span class="o">.</span><span class="na">closeWindow</span><span class="o">();</span> <span class="c1">// close the window, also disposes the ApplicationListener</span>
+</code></pre></div></div>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

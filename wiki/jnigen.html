@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>jnigen - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="jnigen">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/jnigen">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/jnigen">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">jnigen
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/jnigen.md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <p>jnigen is a small library that can be used with or without libGDX which allows C/C++ code to be written inline with Java source code. This increases the locality of code that conceptually belongs together (the Java native class methods and the actual implementation) and makes refactoring a lot easier compared to the usual <a href="http://en.wikipedia.org/wiki/Java_Native_Interface" rel="external">JNI<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> workflow. Arrays and direct buffers are converted for you, further reducing boilerplate. Building the natives for Windows, Linux, OS X, and Android is handled for you. jnigen also provides a mechanism for loading native libraries from a JAR at runtime, which avoids “java.library.path” troubles.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>You will need MinGW for both 32 and 64 bit. After installation, be sure the <code class="language-plaintext highlighter-rouge">bin</code> directory is on your path.</p>
+
+<p>Note that gdx-jnigen is a Java project. It has a blank AndroidManifest.xml because the Android NDK requires it, but it is not an Android project.</p>
+
+<h3 id="windows">Windows</h3>
+
+<ul>
+  <li>
+<strong>MinGW 32 bit</strong> Run <a href="https://sourceforge.net/projects/mingw/files/Installer/" rel="external">mingw-get-setup.exe<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>, install with the GUI, choose <code class="language-plaintext highlighter-rouge">mingw32-base</code> and <code class="language-plaintext highlighter-rouge">mingw32-gcc-g++</code> under “Basic Setup”, then Installation -&gt; Apply Changes.</li>
+  <li>
+<strong>MinGW 64 bit</strong> Download the <a href="http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/4.8.2/threads-win32/seh/x86_64-4.8.2-release-win32-seh-rt_v3-rev1.7z/download" rel="external">MinGW 64 bit<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> binaries and unzip.</li>
+</ul>
+
+<h3 id="linux">Linux</h3>
+
+<ul>
+  <li>Ubuntu and other Debian-based systems (unverified)</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>g++-mingw-w64-i686 g++-mingw-w64-x86-64
+</code></pre></div></div>
+
+<ul>
+  <li>Arch Linux (this installs a compiler for both 32-bit and 64-bit; <a href="https://wiki.archlinux.org/index.php/MinGW_package_guidelines" rel="external">read more<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>)</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> mingw-w64-gcc
+</code></pre></div></div>
+
+<ul>
+  <li>Fedora, CentOS and RHEL-based systems</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf <span class="nb">install </span>mingw32-gcc-c++ mingw64-gcc-c++ mingw32-winpthreads-static mingw64-winpthreads-static
+</code></pre></div></div>
+
+<h2 id="quickstart">Quickstart</h2>
+
+<p>Here is a barebones example, first the Java source with inline native code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Example {
+	// @off
+
+	static public native int add (int a, int b); /*
+		return a + b;
+	*/
+	
+	public static void main (String[] args) throws Exception {
+		new SharedLibraryLoader().load("my-native-lib");
+		System.out.println(add(1, 2));
+	}
+}
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">@off</code> comment turns off the Eclipse source formatter for the rest of the file. This prevents it from ruining the formatting of our native code in the comments. This feature has to be turned “on” in Eclipse preferences: Java &gt; Code Style &gt; Formatter. Click on “Edit” button, “Off/On Tags”, check off “Enable Off/On tags”.</p>
+
+<p>Next, a native method is defined. Normally for JNI you would need to run <a href="http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javah.html" rel="external">javah<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> to generate stub source files which you would edit and need to keep up to date with the Java source. With jnigen, you just use a multi-line comment immediately after the native method which contains your native code. The parameters for the native method are available to your native code.</p>
+
+<p>Lastly, a main method is defined. The <code class="language-plaintext highlighter-rouge">SharedLibraryLoader</code> extracts the appropriate native library from the classpath and loads it. This allows you to distribute your native libraries inside your JARs and you will never have problems with <code class="language-plaintext highlighter-rouge">java.library.path</code>. If using jnigen without libgdx, you can use <code class="language-plaintext highlighter-rouge">JniGenSharedLibraryLoader</code> instead which does the same thing. <code class="language-plaintext highlighter-rouge">JniGenSharedLibraryLoader</code> is the only class from jnigen that is needed at runtime, if you choose to use it.</p>
+
+<p>Here is the build for the native library above:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class ExampleBuild {
+	static public void main (String[] args) throws Exception {
+		NativeCodeGenerator jnigen = new NativeCodeGenerator();
+		jnigen.generate("src", "bin", "jni", new String[] {"**/Example.java"}, null);
+
+		BuildTarget win32 = BuildTarget.newDefaultTarget(TargetOs.Windows, false);
+		win32.compilerPrefix = "mingw32-";
+		BuildTarget win64 = BuildTarget.newDefaultTarget(TargetOs.Windows, true);
+		BuildTarget linux32 = BuildTarget.newDefaultTarget(TargetOs.Linux, false);
+		BuildTarget linux64 = BuildTarget.newDefaultTarget(TargetOs.Linux, true);
+		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, true);
+
+		new AntScriptGenerator().generate(new BuildConfig("my-native-lib"), win32, win64);
+		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		BuildExecutor.executeAnt("jni/build-windows64.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		// BuildExecutor.executeAnt("jni/build-linux32.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		// BuildExecutor.executeAnt("jni/build-linux64.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		// BuildExecutor.executeAnt("jni/build-macosx32.xml", "-v", "-Drelease=true", "clean", "postcompile");
+		BuildExecutor.executeAnt("jni/build.xml", "-v", "pack-natives");
+	}
+}
+</code></pre></div></div>
+<p>You have to download <a href="https://jar-download.com/?detail_search=g%3A%22com.badlogicgames.gdx%22+AND+a%3A%22gdx-jnigen%22+AND+v%3A%221.9.8%22&amp;a=gdx-jnigen">JNI-GEN.JAR</a> and add it as dependency in your Android Studio.</p>
+
+<p>First, <code class="language-plaintext highlighter-rouge">NativeCodeGenerator</code> is used to generate the native source from the Java source. It needs to be told where to find the Java source, the class files for that source, the directory to output the native source, a list of glob patterns for what Java source files to process, and a list of glob patterns for what source files to exclude.</p>
+
+<p>Next, build targets are defined for each platform. <code class="language-plaintext highlighter-rouge">BuildTarget.newDefaultTarget</code> is used to provide reasonable defaults for each target. This build is meant to be built on Windows, so the Windows 32 bit default <code class="language-plaintext highlighter-rouge">compilerPrefix</code> of “i686-w64-mingw32-“ (which is good for building on Linux) needs to be changed to “mingw32-“. There are other fields on <code class="language-plaintext highlighter-rouge">BuildTarget</code> that can be customized, such as source files to include/exclude, header directories, C/C++ flags, linker flags, linked libraries, etc.</p>
+
+<p>Next, <code class="language-plaintext highlighter-rouge">AntScriptGenerator</code> is used to output the Ant build scripts. The <code class="language-plaintext highlighter-rouge">BuildConfig</code> specifies global build settings, such as the name of the native library (“my-native-lib” here), input and output directories, etc.</p>
+
+<p>Lastly, the Ant scripts are run to build the actual native libraries and pack them into a JAR. To run the main method from the example above, the JAR just needs to be on the classpath.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>jnigen has two parts:</p>
+
+<ul>
+  <li>Inspect Java source files in a specific folder, detect native methods and the attached C++ implementation, and spit out a C++ source file and header, similar to what you’d create manually with JNI.</li>
+  <li>Provide a generator for Ant build scripts that build the native source for every platform.</li>
+</ul>
+
+<h3 id="native-code-generation">Native code generation</h3>
+
+<p>Here’s an example of Java/C++ mixed in a single Java source file as understood by jnigen (taken from <a href="https://github.com/libgdx/libgdx/blob/master/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/com/badlogic/gdx/utils/BufferUtils.java" rel="external">BufferUtils<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>):</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">native</span> <span class="nc">ByteBuffer</span> <span class="nf">newDisposableByteBuffer</span> <span class="o">(</span><span class="kt">int</span> <span class="n">numBytes</span><span class="o">);</span> <span class="cm">/*
+   char* ptr = (char*)malloc(numBytes);
+   return env-&gt;NewDirectByteBuffer(ptr, numBytes);
+*/</span>
+
+<span class="kd">private</span> <span class="kd">native</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">copyJni</span> <span class="o">(</span><span class="kt">float</span><span class="o">[]</span> <span class="n">src</span><span class="o">,</span> <span class="nc">Buffer</span> <span class="n">dst</span><span class="o">,</span> <span class="kt">int</span> <span class="n">numFloats</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offset</span><span class="o">);</span> <span class="cm">/*
+   memcpy(dst, src + offset, numFloats &lt;&lt; 2 );
+*/</span>
+</code></pre></div></div>
+
+<p>The C++ code is contained in a block comment after the Java native method declaration. Java side input parameters will be available to the C++ code by their Java names, and, if possible marshalled for a limited subset of types. The following marshalling takes place:</p>
+
+<ul>
+  <li>Primitive types are passed as is, using jint, jshort, jboolean, etc as their types.</li>
+  <li>One dimensional primitive type arrays are converted to typed pointers you can directly access. The arrays are automatically locked and unlocked for you via JNIEnv::GetPrimitiveArrayCritical and JNIEnv::ReleasePrimitiveArrayCritical.</li>
+  <li>Direct buffers are converted to unsigned char<code class="language-plaintext highlighter-rouge">*</code> pointers via JNIEnv::GetDirectBufferAddress. Note that the position of the buffer is not taken into account!</li>
+  <li>Any other type will be passed with its respective JNI type, eg normal Java objects will be passed as jobject.</li>
+</ul>
+
+<p>The above two jnigen native methods would translate to the following C++ source (there would be a corresponding header file as well):</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">JNIEXPORT</span> <span class="n">jobject</span> <span class="n">JNICALL</span> <span class="nf">Java_com_badlogic_gdx_utils_BufferUtils_newDisposableByteBuffer</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span> <span class="n">env</span><span class="p">,</span> <span class="n">jclass</span> <span class="n">clazz</span><span class="p">,</span> <span class="n">jint</span> <span class="n">numBytes</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">//@line:334</span>
+   <span class="kt">char</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">numBytes</span><span class="p">);</span>
+   <span class="k">return</span> <span class="n">env</span><span class="o">-&gt;</span><span class="n">NewDirectByteBuffer</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">numBytes</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">JNIEXPORT</span> <span class="kt">void</span> <span class="n">JNICALL</span> <span class="nf">Java_com_badlogic_gdx_utils_BufferUtils_copyJni___3FLjava_nio_Buffer_2II</span><span class="p">(</span><span class="n">JNIEnv</span><span class="o">*</span> <span class="n">env</span><span class="p">,</span> <span class="n">jclass</span> <span class="n">clazz</span><span class="p">,</span> <span class="n">jfloatArray</span> <span class="n">obj_src</span><span class="p">,</span> <span class="n">jobject</span> <span class="n">obj_dst</span><span class="p">,</span> <span class="n">jint</span> <span class="n">numFloats</span><span class="p">,</span> <span class="n">jint</span> <span class="n">offset</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">dst</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetDirectBufferAddress</span><span class="p">(</span><span class="n">obj_dst</span><span class="p">);</span>
+   <span class="kt">float</span><span class="o">*</span> <span class="n">src</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span><span class="n">env</span><span class="o">-&gt;</span><span class="n">GetPrimitiveArrayCritical</span><span class="p">(</span><span class="n">obj_src</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">//@line:348</span>
+   <span class="n">memcpy</span><span class="p">(</span><span class="n">dst</span><span class="p">,</span> <span class="n">src</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span> <span class="n">numFloats</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span> <span class="p">);</span>
+
+   <span class="n">env</span><span class="o">-&gt;</span><span class="n">ReleasePrimitiveArrayCritical</span><span class="p">(</span><span class="n">obj_src</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>As you can see, the marshalling is inserted at the top and bottom of the method automatically in <code class="language-plaintext highlighter-rouge">copyJni()</code>. If you return from your JNI method in place other than the end of your method, jnigen will wrap your function with a second function that does all the marshalling, like here: <a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeType.java#L584" rel="external">Java source<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> and the <a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-freetype/jni/com.badlogic.gdx.graphics.g2d.freetype.FreeType.cpp#L472" rel="external">C++ translation<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<p>jnigen outputs the Java line numbers in the generated native code, telling us where in the original Java source file the C++ appeared. This is helpful when building jnigen generated C++ code, as the Ant script will spit out errors with Java line numbers to which we can jump to by clicking on the line in the console.</p>
+
+<p>To let jnigen go through your source code and generated C/C++ header and source files, you do the following:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">NativeCodeGenerator</span><span class="o">().</span><span class="na">generate</span><span class="o">(</span><span class="s">"src"</span><span class="o">,</span> <span class="s">"bin"</span><span class="o">,</span> <span class="s">"jni"</span><span class="o">,</span> <span class="k">new</span> <span class="nc">String</span><span class="o">[]</span> <span class="o">{</span><span class="s">"**/*"</span><span class="o">},</span> <span class="kc">null</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>You specify the source folder, the folder containing the compiled .class files of your Java classes, the Java files to include (using Ant path patterns) and the files you want to exclude. See the source of <a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/NativeCodeGenerator.java" rel="external">NativeCodeGenerator<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> for more info.</p>
+
+<h4 id="build-script-generation">Build script generation</h4>
+
+<p>Once the native code files have been generated, we also want to create build scripts for all supported platforms. This currently includes Windows (32-/64-bit), Linux (32-/64-bit), Mac OS X (x86, 32-/64-bit), Android (arm6/arm7) and iOS (i386, arm7). The build script generator of jnigen has template Ant script files that can be parametrized for each platform. The parameters are specified via a <a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/BuildTarget.java" rel="external">BuildTarget<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. You can create a BuildTarget for a specific platform like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BuildTarget</span> <span class="n">linux32</span> <span class="o">=</span> <span class="nc">BuildTarget</span><span class="o">.</span><span class="na">newDefaultTarget</span><span class="o">(</span><span class="nc">TargetOS</span><span class="o">.</span><span class="na">Linux</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>This creates a default build target for Linux 32-bit. You can then add additional, platform specific settings to the BuildTarget. Repeat the process for other targets.</p>
+
+<p>Once all targets are configured, you pull them together in a <a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/BuildConfig.java" rel="external">BuildConfig<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>. You specify the name of the shared/static library, eg “gdx” which will end up as gdx.dll on Windows, libgdx.so on Linux and Android, libgdx.dylib on Mac OS X and libgdx.a on iOS. You can also specify there the build files should be output to, etc. The easiest way of using the config looks like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BuildConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BuildConfig</span><span class="o">(</span><span class="s">"gdx"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>One the targets and config are in place, it’s time to generate the Ant scripts via the <a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/AntScriptGenerator.java" rel="external">AntScriptGenerator<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">AntScriptGenerator</span><span class="o">().</span><span class="na">generate</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">linux32</span><span class="o">,</span> <span class="n">linux64</span><span class="o">,</span> <span class="n">windows32</span><span class="o">,</span> <span class="n">windows64</span><span class="o">,</span> <span class="n">macosx</span><span class="o">,</span> <span class="n">android</span><span class="o">,</span> <span class="n">ios</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>The generated Ant build scripts will compile the native libraries and package them in a JAR. They can be executed from the command line, or from Java:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Build natives:</span>
+<span class="nc">BuildExecutor</span><span class="o">.</span><span class="na">executeAnt</span><span class="o">(</span><span class="s">"jni/build-windows32.xml"</span><span class="o">,</span> <span class="s">"-v"</span><span class="o">,</span> <span class="s">"-Drelease=true"</span><span class="o">,</span> <span class="s">"clean"</span><span class="o">,</span> <span class="s">"postcompile"</span><span class="o">);</span>
+<span class="nc">BuildExecutor</span><span class="o">.</span><span class="na">executeAnt</span><span class="o">(</span><span class="s">"jni/build-windows64.xml"</span><span class="o">,</span> <span class="s">"-v"</span><span class="o">,</span> <span class="s">"-Drelease=true"</span><span class="o">,</span> <span class="s">"clean"</span><span class="o">,</span> <span class="s">"postcompile"</span><span class="o">);</span>
+<span class="c1">// etc</span>
+<span class="c1">// JAR natives:</span>
+<span class="nc">BuildExecutor</span><span class="o">.</span><span class="na">executeAnt</span><span class="o">(</span><span class="s">"jni/build.xml"</span><span class="o">,</span> <span class="s">"-v"</span><span class="o">,</span> <span class="s">"pack-natives"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="more">More</h3>
+
+<p>A video of Mario showing off jnigen:</p>
+
+<p><img src="/assets/wiki/%5Bimages/lxcnuel.png%5D" alt="[images/lxCnueL.png]">(http://www.youtube.com/watch?v=N2EE_jlDfrM)</p>
+
+<p><a href="https://github.com/badlogic/jglfw/blob/master/jglfw/src/com/badlogic/jglfw/Glfw.java#L268" rel="external">Jglfw<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> makes extensive use of jnigen and shows how easy it can be to wrap a native API for use in Java. Note the <code class="language-plaintext highlighter-rouge">/*JNI</code> comment is used to define includes, statics, and functions.</p>
+
+<p>Here are a number of jnigen builds that can serve as examples of varying complexity:</p>
+
+<ul>
+  <li><a href="https://github.com/badlogic/jglfw/blob/master/jglfw/src/com/badlogic/jglfw/GlfwBuild.java#L35" rel="external">Jglfw’s build<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+  <li><a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-audio/src/com/badlogic/gdx/audio/AudioBuild.java#L31" rel="external">AudioBuild<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+  <li><a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-bullet/src/com/badlogic/gdx/physics/bullet/BulletBuild.java#L26" rel="external">BulletBuild<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+  <li><a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-controllers/gdx-controllers-desktop/src/com/badlogic/gdx/controllers/desktop/DesktopControllersBuild.java#L25" rel="external">DesktopControllersBuild<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+  <li><a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreetypeBuild.java#L26" rel="external">FreetypeBuild<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+  <li><a href="https://github.com/libgdx/libgdx/blob/master/extensions/gdx-image/src/com/badlogic/gdx/graphics/g2d/ImageBuild.java#L26" rel="external">ImageBuild<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a></li>
+</ul>
+
+<h3 id="ccache">ccache</h3>
+<p>Using <a href="http://ccache.samba.org/" rel="external">ccache<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> is highly recommended if you build for all platforms (Linux, Windows, Mac OS X, Android, iOS, arm arm-v7, x86, x64 and all permutations). For libgdx, we use a very simple setup. On our build server, we have an <code class="language-plaintext highlighter-rouge">/opt/ccache</code> directory that houses a bunch of shell scripts, one for each compiler binary:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jenkins@badlogic:~/workspace/libgdx/gdx/jni$ ls -lah /opt/ccache/
+-rwxr-xr-x  1 jenkins  www-data   44 Apr  6 13:14 g++
+-rwxr-xr-x  1 jenkins  www-data   44 Apr  6 13:14 gcc
+-rwxr-xr-x  1 jenkins  www-data   78 Apr  6 13:15 i686-w64-mingw32-g++
+-rwxr-xr-x  1 jenkins  www-data   78 Apr  6 13:15 i686-w64-mingw32-gcc
+-rwxr-xr-x  1 jenkins  www-data   82 Apr  6 13:15 x86_64-w64-mingw32-g++
+-rwxr-xr-x  1 jenkins  www-data   82 Apr  6 13:15 x86_64-w64-mingw32-gcc
+</code></pre></div></div>
+
+<p>Each of these scripts looks like this (with a modified executable name of course):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "g++ ccache!"
+ccache /usr/bin/g++ "$@"
+</code></pre></div></div>
+
+<p>To make ccache work, just make sure the <code class="language-plaintext highlighter-rouge">/opt/ccache</code> directory is first in your PATH:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=/opt/ccache:$PATH
+</code></pre></div></div>
+
+<p>Any time one of the compilers is invoked, the shell scripts redirect to ccache.</p>
+
+<p>For Android it is sufficient to set NDK_CCACHE</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export NDK_CCACHE=ccache
+</code></pre></div></div>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

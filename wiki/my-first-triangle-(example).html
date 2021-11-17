@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+--><html lang="en" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- overrides: https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head.html -->
+
+<meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>My First Triangle (Example) - libGDX</title>
+<meta name="description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="libGDX">
+<meta property="og:title" content="My First Triangle (Example)">
+<meta property="og:url" content="https://crykn.github.io/pages/crykn/wiki/my-first-triangle-(example)">
+
+
+  <meta property="og:description" content="libGDX is a cross-platform Java game development framework based on OpenGL (ES) that works on Windows, Linux, macOS, Android, your browser and iOS.">
+
+
+
+  <meta property="og:image" content="https://crykn.github.io/pages/crykn/assets/images/logo.png">
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://crykn.github.io/pages/crykn/wiki/my-first-triangle-(example)">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://crykn.github.io/pages/crykn/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="qc0iys9Aweas1z8EhICO-0Ohwh6Iq1GDV6K75e0ToO8">
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/pages/crykn/feed.xml" type="application/atom+xml" rel="alternate" title="libGDX Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- Light mode -->
+<link rel="stylesheet" href="/pages/crykn/assets/css/main.css">
+
+<!-- Dark mode -->
+
+  <meta name="color-scheme" content="light dark">
+  <style>
+    @import url("/pages/crykn/assets/css/main2.css") (prefers-color-scheme: dark);
+  </style>
+
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/wiki.css">
+  </head>
+
+  <body class="layout--wiki">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <!-- overrides: _includes/masthead.html -->
+
+
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/pages/crykn/">
+            <picture>
+              
+                <!-- dark mode logo -->
+                <source srcset="/pages/crykn/assets/brand/logo_dark.svg" media="(prefers-color-scheme: dark)">
+              
+              <img src="/pages/crykn/assets/brand/logo.svg" alt=" ">
+            </source></picture>
+          </a>
+        
+        <a class="site-title" href="/pages/crykn/">
+           
+          
+        </a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/">Back to Main Site</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/pages/crykn/wiki/">Wiki Home</a>
+            </li>
+</ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+
+      <div id="main" role="main">
+  <header>
+    <h1 id="page-title" class="page__title" itemprop="headline">My First Triangle (Example)
+</h1>
+
+    <div class="header-meta">
+      Last edited on 17 November 2021 • <a href="https://github.com/crykn/crykn.github.io/commits/dev/" rel="external">View revision history<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a> • <a href="https://github.com/crykn/crykn.github.io/edit/dev/_wiki/my-first-triangle-(example).md" rel="external">Edit on GitHub<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>
+    </div>
+  </header>
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content e-content markdown-body" itemprop="text">
+          <aside class="sidebar__right">
+            <nav class="toc">
+              <div class="toc__menu">
+                
+                <h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="/wiki/wiki-style-guide">Wiki Style Guide</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<ul>
+  <li><a href="/wiki/setup">Setting Up a Dev Environment</a></li>
+  <li><a href="/wiki/project-generation">Creating Your First libGDX Project</a></li>
+  <li><a href="/wiki/import-and-running">Importing &amp; Running It</a></li>
+  <li><a href="/wiki/a-simple-game">A Simple Game</a></li>
+  <li><a href="/wiki/simple-game-extended">Extending the Simple Game</a></li>
+</ul>
+
+<h2 id="developers-guide">Developer’s Guide</h2>
+<details><summary>The Application Framework</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/the-application-framework">The Application Framework</a></li>
+      <li><a href="/wiki/the-life-cycle">The Life-Cycle</a></li>
+      <li><a href="/wiki/modules-overview">Modules Overview</a></li>
+      <li><a href="/wiki/starter-classes-and-configuration">Starter Classes and Configuration</a></li>
+      <li><a href="/wiki/querying">Querying</a></li>
+      <li><a href="/wiki/logging">Logging</a></li>
+      <li><a href="/wiki/threading">Threading</a></li>
+      <li><a href="/wiki/interfacing-with-platform-specific-code">Interfacing With Platform-Specific Code</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/file-handling">File Handling</a></p>
+
+<p><a href="/wiki/networking">Networking</a></p>
+
+<p><a href="/wiki/preferences">Preferences</a></p>
+
+<details><summary>Input Handling</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/input-handling">Input Handling</a></li>
+      <li><a href="/wiki/configuration-and-querying">Configuration and Querying</a></li>
+      <li>
+<a href="/wiki/mouse,-touch-and-keyboard">Mouse, Touch and Keyboard</a>
+        <ul>
+          <li><a href="/wiki/polling">Polling</a></li>
+          <li><a href="/wiki/event-handling">Event Handling</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/controllers">Controllers</a></li>
+      <li><a href="/wiki/gesture-detection">Gesture Detection</a></li>
+      <li><a href="/wiki/simple-text-input">Simple Text Input</a></li>
+      <li><a href="/wiki/accelerometer">Accelerometer</a></li>
+      <li><a href="/wiki/compass">Compass</a></li>
+      <li><a href="/wiki/gyroscope">Gyroscope</a></li>
+      <li><a href="/wiki/vibrator">Vibrator</a></li>
+      <li><a href="/wiki/cursor-visibility-and-catching">Cursor Visibility and Catching</a></li>
+      <li><a href="/wiki/back-and-menu-key-catching">Back and Menu Key Catching</a></li>
+      <li><a href="/wiki/on-screen-keyboard">On-Screen Keyboard</a></li>
+      <li><a href="/wiki/adding-new-keycodes">Adding new Keycodes</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/memory-management">Memory Management</a></p>
+
+<details><summary>Audio</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/audio">Audio</a></li>
+      <li><a href="/wiki/sound-effects">Sound Effects</a></li>
+      <li><a href="/wiki/streaming-music">Streaming Music</a></li>
+      <li><a href="/wiki/playing-pcm-audio">Playing PCM Audio</a></li>
+      <li><a href="/wiki/recording-pcm-audio">Recording PCM Audio</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Graphics</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/graphics">Graphics</a></li>
+      <li><a href="/wiki/querying-and-configuring-graphics-(monitors,-display-modes,-vsync,-display-cutouts)">Querying and configuring graphics (monitors, display modes, vsync, display cutouts)</a></li>
+      <li><a href="/wiki/continuous-and-non-continuous-rendering">Continuous and Non-Continuous Rendering</a></li>
+      <li><a href="/wiki/clearing-the-screen">Clearing the Screen</a></li>
+      <li><a href="/wiki/taking-a-screenshot">Taking a Screenshot</a></li>
+      <li><a href="/wiki/profiling">Profiling</a></li>
+      <li><a href="/wiki/viewports">Viewports</a></li>
+      <li>
+<a href="/wiki/opengl-(es)-support">OpenGL (ES) Support</a>
+        <ul>
+          <li>Configuration and Querying OpenGL ??</li>
+          <li>Direct Access ??</li>
+          <li>Utility Classes<br>
+ -<a href="/wiki/rendering-shapes">Rendering Shapes</a><br>
+ -<a href="/wiki/textures-and-textureregions">Textures and TextureRegions</a><br>
+ -<a href="/wiki/meshes">Meshes</a><br>
+ -<a href="/wiki/shaders">Shaders</a><br>
+ -<a href="/wiki/frame-buffer-objects">Frame Buffer Objects</a>
+</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>    <strong>2D Graphics</strong></p>
+    <ul>
+      <li><a href="/wiki/spritebatch,-textureregions,-and-sprites">SpriteBatch, TextureRegions, and Sprites</a></li>
+      <li><a href="/wiki/2d-animation">2D Animation</a></li>
+      <li><a href="/wiki/clipping,-with-the-use-of-scissorstack">Clipping, With the Use of ScissorStack</a></li>
+      <li><a href="/wiki/masking">Masking</a></li>
+      <li><a href="/wiki/orthographic-camera">Orthographic Camera</a></li>
+      <li>Mapping Touch Coordinates ??</li>
+      <li><a href="/wiki/ninepatches">NinePatches</a></li>
+      <li>
+<a href="/wiki/bitmap-fonts">Bitmap Fonts</a>
+        <ul>
+          <li><a href="/wiki/distance-field-fonts">Distance Field Fonts</a></li>
+          <li><a href="/wiki/color-markup-language">Color Markup Language</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/using-textureatlases">Using TextureAtlases</a></li>
+      <li><a href="/wiki/pixmaps">Pixmaps</a></li>
+      <li><a href="/wiki/packing-atlases-offline">Packing Atlases Offline</a></li>
+      <li><a href="/wiki/packing-atlases-at-runtime">Packing Atlases at Runtime</a></li>
+      <li><a href="/wiki/texture-compression">Texture Compression</a></li>
+      <li><a href="/wiki/2d-particleeffects">2D ParticleEffects</a></li>
+      <li><a href="/wiki/tile-maps">Tile Maps</a></li>
+      <li><a href="/wiki/scene2d">scene2d</a></li>
+      <li>
+<a href="/wiki/scene2d.ui">scene2d.ui</a>
+        <ul>
+          <li><a href="/wiki/table">Table</a></li>
+          <li><a href="/wiki/skin">Skin</a></li>
+        </ul>
+      </li>
+      <li><a href="/wiki/imgui">ImGui</a></li>
+    </ul>
+
+    <p>    <strong><a href="/wiki/3d-graphics">3D Graphics</a></strong></p>
+
+    <ul>
+      <li><a href="/wiki/quick-start">Quick Start</a></li>
+      <li><a href="/wiki/models">Models</a></li>
+      <li><a href="/wiki/material-and-environment">Material and Environment</a></li>
+      <li><a href="/wiki/modelbatch">ModelBatch</a></li>
+      <li><a href="/wiki/modelcache">ModelCache</a></li>
+      <li><a href="/wiki/modelbuilder,-meshbuilder-and-meshpartbuilder">ModelBuilder, MeshBuilder and MeshPartBuilder</a></li>
+      <li><a href="/wiki/3d-animations-and-skinning">3D Animations and Skinning</a></li>
+      <li><a href="/wiki/importing-blender-models-in-libgdx">Importing Blender Models in libGDX</a></li>
+      <li><a href="/wiki/3d-particle-effects">3D Particle Effects</a></li>
+      <li><a href="/wiki/virtual-reality-(vr)">Virtual Reality (VR)</a></li>
+      <li><a href="/wiki/3d-picking">3D Picking</a></li>
+      <li>Perspective Camera ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<p><a href="/wiki/managing-your-assets">Managing Your Assets</a></p>
+
+<p><a href="/wiki/html5-backend-and-gwt-specifics">HTML5 Backend and GWT Specifics</a></p>
+
+<p><a href="/wiki/internationalization-and-localization">Internationalization and Localization</a></p>
+
+<details><summary>Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/reading-and-writing-json">Reading and Writing JSON</a></li>
+      <li><a href="/wiki/reading-and-writing-xml">Reading and Writing XML</a></li>
+      <li><a href="/wiki/collections">Collections</a></li>
+      <li><a href="/wiki/reflection">Reflection</a></li>
+      <li><a href="/wiki/jnigen">jnigen</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Math Utilities</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/math-utilities">Math Utilities</a></li>
+      <li><a href="/wiki/interpolation">Interpolation</a></li>
+      <li><a href="/wiki/vectors,-matrices,-quaternions">Vectors, Matrices, Quaternions</a></li>
+      <li><a href="/wiki/circles,-planes,-rays,-etc.">Circles, Planes, Rays, etc.</a></li>
+      <li><a href="/wiki/path-interface-and-splines">Path Interface and Splines</a></li>
+      <li>Bounding Volumes ??</li>
+      <li>Intersection and Overlap Testing ??</li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Tools</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/texture-packer">Texture Packer</a></li>
+      <li><a href="/wiki/hiero">Hiero</a></li>
+      <li><a href="/wiki/2d-particle-editor">2D Particle Editor</a></li>
+      <li><a href="/wiki/skin-composer">Skin Composer</a></li>
+      <li><a href="/wiki/overlap2d">Overlap2D</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Extensions</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/artificial-intelligence">Artificial Intelligence</a></li>
+      <li><a href="/wiki/gdx-freetype">gdx-freetype</a></li>
+      <li>
+<a href="/wiki/gdx-pay">gdx-pay</a>: cross-platform In-App-Purchasing API</li>
+      <li>
+<a href="/wiki/physics">Physics</a>
+        <ul>
+          <li><a href="/wiki/box2d">Box2D</a></li>
+          <li>
+<a href="/wiki/bullet-physics">Bullet Physics</a><br>
+ -<a href="/wiki/bullet-wrapper-setup">Setup</a><br>
+ -<a href="/wiki/bullet-wrapper-using-the-wrapper">Using the Wrapper</a><br>
+ -<a href="/wiki/bullet-wrapper-using-models">Using Models</a><br>
+ -<a href="/wiki/bullet-wrapper-contact-callbacks">Contact Callbacks</a><br>
+ -<a href="/wiki/bullet-wrapper-custom-classes">Custom Classes</a><br>
+ -<a href="/wiki/bullet-wrapper-debugging">Debugging</a>
+</li>
+        </ul>
+      </li>
+      <li><a href="/wiki/third-party-extension-support">Publishing Your Own Extensions</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Using libGDX With Other JVM Languages</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/using-libgdx-with-other-jvm-languages">Using libGDX With Other JVM Languages</a></li>
+      <li><a href="/wiki/using-libgdx-with-clojure">Using libGDX With Clojure</a></li>
+      <li><a href="/wiki/using-libgdx-with-kotlin">Using libGDX With Kotlin</a></li>
+      <li><a href="/wiki/using-libgdx-with-python">Using libGDX With Python</a></li>
+      <li><a href="/wiki/using-libgdx-with-scala">Using libGDX With Scala</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<details><summary>Third Party Services</summary>
+
+<div>
+    <ul>
+      <li><a href="/wiki/admob-in-libgdx">AdMob in libGDX</a></li>
+      <li><a href="/wiki/airpush-in-libgdx">Airpush in libGDX</a></li>
+      <li><a href="/wiki/firebase-in-libgdx">Firebase in libGDX</a></li>
+      <li><a href="/wiki/smaato-in-libgdx">Smaato in libGDX</a></li>
+      <li><a href="/wiki/google-play-games-services-in-libgdx">Google Play Games Services in libGDX</a></li>
+      <li><a href="/wiki/pollfish-in-libgdx">Pollfish in libGDX</a></li>
+      <li><a href="/wiki/proguard/dexguard-and-libgdx">ProGuard/DexGuard and libGDX</a></li>
+    </ul>
+  </div>
+
+</details>
+
+<h2 id="articles">Articles</h2>
+<ul>
+  <li><a href="/wiki/getting-help">Getting Help</a></li>
+  <li><a href="/wiki/external-tutorials">External Tutorials</a></li>
+  <li><a href="/wiki/java-development-kit---selection">Java Development Kit - Selection</a></li>
+  <li><a href="/wiki/deploying-your-application">Deploying your application</a></li>
+  <li><a href="/wiki/coordinate-systems">Coordinate systems</a></li>
+  <li><a href="/wiki/updating-libgdx">Updating Your libGDX Version</a></li>
+  <li><a href="/wiki/dependency-management-with-gradle">Adding Extensions and 3rd Party Libraries</a></li>
+  <li><a href="/wiki/improving-workflow-with-gradle">Improving Your Gradle Workflow</a></li>
+  <li><a href="/wiki/creating-a-separate-assets-project-in-eclipse">Creating Asset Project in Eclipse</a></li>
+</ul>
+
+              </div>
+            </nav>
+          </aside>
+
+        <p>Note: The following article is outdated and no longer works due to the exclusion of GL10 in the latest libGDX. Please use <a href="https://github.com/mattdesl/lwjgl-basics/wiki/LibGDX-Meshes-Lesson-1" rel="external">the following instead<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<h1 id="summary">Summary</h1>
+
+<ul>
+  <li>Create a libGDX project from scratch</li>
+  <li>Create your first triangle</li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>The HelloWorld tutorial demonstrated how a libGDX application is structured by importing an existing project. Lets now go one step further and create project from scratch. This tutorial is more verbose in case the reader is also a novice with Eclipse. Future tutorials will have more concise instructions.</p>
+
+<p>The source files for this guide is contained within <a href="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libgdx/MyFirstTriangle.zip" rel="external"><code class="language-plaintext highlighter-rouge">MyFirstTriangle.zip</code><span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>.</p>
+
+<h1 id="creating-the-desktop-project">Creating the Desktop Project</h1>
+
+<p>Download the latest [http://libgdx.l33tlabs.org/ nightly zip] and uncompress it to a temporary directory called <code class="language-plaintext highlighter-rouge">libgdx-nightly</code>.</p>
+
+<p>Most of the code, including all of the game logic, will reside in a regular Java project. In Eclipse, click File -&gt; New -&gt; Java Project. Use <code class="language-plaintext highlighter-rouge">my-first-triangle</code> as the project name. In the JRE section, select <code class="language-plaintext highlighter-rouge">JavaSE-1.6</code> or something similar, then click Finish.</p>
+
+<p>Lets copy libraries contain all the necessary libGDX classes and methods into our workspace. In the Package Explorer view, right-click on the my-first-triangle folder, select New -&gt; Folder, and name the new folder <code class="language-plaintext highlighter-rouge">libs</code>. From the <code class="language-plaintext highlighter-rouge">libgdx-nightly</code> directory, copy the following files into <code class="language-plaintext highlighter-rouge">libs</code>:</p>
+<ul>
+  <li>gdx-backend-jogl.jar</li>
+  <li>gdx-backend-jogl-natives.jar</li>
+  <li>gdx-sources.jar</li>
+  <li>gdx-natives.jar</li>
+  <li>gdx.jar</li>
+</ul>
+
+<p>Now we’ll add the libraries to our project so that our Java code  can reference the classes in the libGDX libraries. Right click on the <code class="language-plaintext highlighter-rouge">my-first-triangle</code> folder again and select Properties. Go to the Java Build Path section, select the Libraries tab, click Add JARs…, navigate to the <code class="language-plaintext highlighter-rouge">my-first-triangle/libs</code> directory and select the files:</p>
+<ul>
+  <li>gdx-backend-jogl.jar</li>
+  <li>gdx-backend-jogl-natives.jar</li>
+  <li>gdx-natives.jar</li>
+  <li>gdx.jar</li>
+</ul>
+
+<p>Eclipse can also show you the javadoc documention for the libGDX classes and methods you use. While still in the Libraries tab, expand the <code class="language-plaintext highlighter-rouge">gdx.jar</code> listing and double click on the entry named Source attachment. Click Workspace and navigate to the my-first-triangle/libs directory again, this time selecting <code class="language-plaintext highlighter-rouge">gdx-sources.jar</code>.</p>
+
+<p>Now we can create a class that will draw our triangle. Expand the my-first-triangle folder, right-click on the <code class="language-plaintext highlighter-rouge">src</code> source directory and select New -&gt; Package. Name it anything you want, in this example we’ll use <code class="language-plaintext highlighter-rouge">com.test.myfirsttriangle</code>. Right-click on the new package, and select New -&gt; Class, use the name <code class="language-plaintext highlighter-rouge">MyFirstTriangle</code>. In the Interfaces section, add the <code class="language-plaintext highlighter-rouge">com.badlogic.gdx.ApplicationListener</code> interface. Your new class should look something like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.test.myfirsttriangle</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.ApplicationListener</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyFirstTriangle</span> <span class="kd">implements</span> <span class="nc">ApplicationListener</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispose</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">pause</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">resize</span><span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">resume</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>We will soon add logic to <code class="language-plaintext highlighter-rouge">MyFirstTriangle</code> to draw a triangle. It will be capable of being run in either the desktop or Android environment. Lets create the desktop entry point now. In the same package as the <code class="language-plaintext highlighter-rouge">MyFirstTriangle</code> class, create another class, this time named <code class="language-plaintext highlighter-rouge">MyFirstTriangleDesktop</code>. Put a <code class="language-plaintext highlighter-rouge">main</code> method in the class so that it looks like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.test.myfirsttriangle</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.backends.jogl.JoglApplication</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyFirstTriangleDesktop</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">argv</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">new</span> <span class="nf">JoglApplication</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyFirstTriangle</span><span class="o">(),</span> <span class="s">"My First Triangle"</span><span class="o">,</span> <span class="mi">480</span><span class="o">,</span> <span class="mi">320</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>		
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">MyFirstTriangleDesktop</code> class gives a starting point to launch a desktop application. It does that by creating a <code class="language-plaintext highlighter-rouge">JoglApplication</code>, passing in an instance of the <code class="language-plaintext highlighter-rouge">MyFirstTriangle</code> class to perform the rendering.</p>
+
+<p>You can run the application right now by right-clicking on the <code class="language-plaintext highlighter-rouge">MyFirstTriangleDesktop</code> class in the Package Explorer and selecting Run As -&gt; Java Application. The application should either look blank or display rendering artifacts (we’ll fix that now).</p>
+
+<h1 id="rendering-a-triangle">Rendering a Triangle</h1>
+
+<p>The application shows a blank screen because our <code class="language-plaintext highlighter-rouge">MyFirstTriangle</code> class contains no rendering logic. Now it’s time to finally create the code to draw a triangle. Replace the contents of the <code class="language-plaintext highlighter-rouge">MyFirstTriangle</code> class with this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.test.myfirsttriangle</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.ApplicationListener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.Gdx</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.graphics.GL10</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.graphics.Mesh</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.graphics.VertexAttribute</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.graphics.VertexAttributes.Usage</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyFirstTriangle</span> <span class="kd">implements</span> <span class="nc">ApplicationListener</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">Mesh</span> <span class="n">mesh</span><span class="o">;</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">mesh</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">mesh</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Mesh</span><span class="o">(</span><span class="kc">true</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> 
+			        <span class="k">new</span> <span class="nf">VertexAttribute</span><span class="o">(</span><span class="nc">Usage</span><span class="o">.</span><span class="na">Position</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="s">"a_position"</span><span class="o">));</span>		
+
+			<span class="n">mesh</span><span class="o">.</span><span class="na">setVertices</span><span class="o">(</span><span class="k">new</span> <span class="kt">float</span><span class="o">[]</span> <span class="o">{</span> <span class="o">-</span><span class="mf">0.5f</span><span class="o">,</span> <span class="o">-</span><span class="mf">0.5f</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span>
+			                               <span class="mf">0.5f</span><span class="o">,</span> <span class="o">-</span><span class="mf">0.5f</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span>
+			                               <span class="mi">0</span><span class="o">,</span> <span class="mf">0.5f</span><span class="o">,</span> <span class="mi">0</span> <span class="o">});</span>	
+			<span class="n">mesh</span><span class="o">.</span><span class="na">setIndices</span><span class="o">(</span><span class="k">new</span> <span class="kt">short</span><span class="o">[]</span> <span class="o">{</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span> <span class="o">});</span>			
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">dispose</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">pause</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">render</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nc">Gdx</span><span class="o">.</span><span class="na">gl</span><span class="o">.</span><span class="na">glClear</span><span class="o">(</span><span class="no">GL10</span><span class="o">.</span><span class="na">GL_COLOR_BUFFER_BIT</span><span class="o">);</span>
+		<span class="n">mesh</span><span class="o">.</span><span class="na">render</span><span class="o">(</span><span class="no">GL10</span><span class="o">.</span><span class="na">GL_TRIANGLES</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">resize</span><span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span> <span class="o">{</span> <span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">resume</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Run the project again. The application should now have a white triangle rendered in the middle of the screen:</p>
+
+<p><img src="http://i.imgur.com/3Qi1ORl.png" alt="Triangle Desktop"></p>
+
+<p>Lets look at the changes we made. <code class="language-plaintext highlighter-rouge">create()</code> is called when the the rendering surface is created. We create a <code class="language-plaintext highlighter-rouge">Mesh</code>, which represents an object that will be drawn onscreen. Its constructor takes several parameters, but for now just take note of the <code class="language-plaintext highlighter-rouge">VertexAttribute</code> object we pass in. <code class="language-plaintext highlighter-rouge">VertexAttribe</code>s are passed into the constructor to indicate what type of information the resulting mesh will contain. A mesh can potentially contain information regarding an object’s position, color, texture, and more, but right now we’ll only assign positional information. Since this mesh is a triangle, its position (and shape) is made up of three <em>vertices</em>, each denoted by three values (x, y, z) in the Cartesian coordiante. The three vertices for this mesh are located at (-0.5f, -0.5f, 0), (0.5f, -0.5f, 0), and (0, 0.5f, 0). We then set the mesh’s <em>indices</em>, which is the order of the vertices, sort of like the order in a game of connecting the dots. In a simple shape like a triangle, the order doesn’t matter because no matter which order you connect the vertices, it will always form a triangle. With more vertices, the order will greatly affect the final shape of the object.</p>
+
+<p>When the application starts running the <code class="language-plaintext highlighter-rouge">render()</code> method is called again and again, basically repainting the screen as fast as it can. In <code class="language-plaintext highlighter-rouge">render()</code> we just tell the mesh we created earlier in <code class="language-plaintext highlighter-rouge">create()</code> to render itself. We also clear the screen each time <code class="language-plaintext highlighter-rouge">render()</code> is called. This is done via OpenGL directly.</p>
+
+<p>For simplicity, we’ve skipped over many details of how different parameters change the behavior of the methods we used. These we’ll go over in more detail in a later tutorials. In the mean time, you can see the javadoc of any method simply by hovering over the method name in the editor.</p>
+
+<h1 id="setting-up-an-android-project">Setting Up an Android Project</h1>
+
+<p>Testing the application on Android only requires setting up a small Android project that refers to the desktop project we just created. In Eclipse, click File -&gt; New -&gt; Other…. Under the Android section, select Android Project and click Next. Name the project anything you want, for our example we’ll use <code class="language-plaintext highlighter-rouge">my-first-triangle-android</code>. Under the Build Target section, select the Android platform version you’re targetting. Different platform version have different support for OpenGL ES, but for our simple example, selecting Android 1.5 is fine. Enter any application name, we’ll use <code class="language-plaintext highlighter-rouge">my-first-triangle-android</code> again. For package name, use the same package from the desktop project, enter <code class="language-plaintext highlighter-rouge">com.test.myfirsttriangle</code>. Check the Create Activity checkbox and give the activity a name, we’ll use <code class="language-plaintext highlighter-rouge">MyFirstTriangleAndroid</code>. For Min SDK Version, type in the API Level of the platform version you chose earlier. That means for Android 1.5, enter <code class="language-plaintext highlighter-rouge">3</code> as the Min SDK Version. Click Finish.</p>
+
+<p>Similar to the desktop project, we’ll copy some libGDX libraries into our workspace. In the Package Explorer view, right-click on the my-first-triangle-android folder and select New -&gt; Folder. Name the folder <code class="language-plaintext highlighter-rouge">libs</code>. Go back to the <code class="language-plaintext highlighter-rouge">libgdx-nightly</code> directory that stores all the libGDX library files and copy the following folders and files into the new <code class="language-plaintext highlighter-rouge">libs</code> directory:</p>
+<ul>
+  <li>armeabi/</li>
+  <li>armeabi-v7a/</li>
+  <li>gdx-backend-android.jar</li>
+  <li>gdx.jar</li>
+</ul>
+
+<p>Again, we’ll have to reference these files in our project settings. Right-click on the my-first-triangle-android folder and select Properties. Under the Java Build Path section, go to the Libraries tab. Click Add JARs… and navigate to my-first-triangle-android/libs and select <code class="language-plaintext highlighter-rouge">gdx-backend-android.jar</code> and <code class="language-plaintext highlighter-rouge">gdx.jar</code>.</p>
+
+<p>We need to be able to reference the libGDX classes and also our previous project. While still in the Java Build Path screen, go to the Projects tab and click Add… and add the <code class="language-plaintext highlighter-rouge">my-first-triangle</code> project we created earlier.</p>
+
+<p>The last task remaining is to modify our Activity to act as the Android entry point into the game code we wrote earlier. In the Package Explorer view, go into the <code class="language-plaintext highlighter-rouge">MyFirstTriangleAndroid</code> class and replace the contents with the following:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.test.myfirsttriangle</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.badlogic.gdx.backends.android.AndroidApplication</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyFirstTriangleAndroid</span> <span class="kd">extends</span> <span class="nc">AndroidApplication</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span> <span class="o">(</span><span class="nc">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+		<span class="n">initialize</span><span class="o">(</span><span class="k">new</span> <span class="nc">MyFirstTriangle</span><span class="o">(),</span> <span class="kc">false</span><span class="o">);</span>		
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Similar to our desktop entry point in the <code class="language-plaintext highlighter-rouge">MyFirstTirangleDesktop</code> class, all this code does is to create an instance of <code class="language-plaintext highlighter-rouge">MyFirstTriangle</code> to manage the rendering process. Run the application by right-clicking on the my-first-triangle-android folder and selecting Run As -&gt; Android Application. The application is then installed on the device or compatible simulator. After the simulator is finished loading, the application should start automatically. If it doesn’t, find and click on the my-first-triangle-android application icon. The application should look like this:</p>
+
+<p><img src="http://i.imgur.com/xYU6Mjf.png" alt="Triangle Android"></p>
+
+<h1 id="whats-next">What’s Next</h1>
+
+<p>That’s it for your first triangle. To learn more about the fundamentals of the libGDX framework, check out the MeshColorTexture guide.</p>
+
+<h1 id="updates">Updates</h1>
+<h2 id="feb-22-2011">Feb 22 2011</h2>
+<ul>
+  <li>use nightly build</li>
+  <li>added <code class="language-plaintext highlighter-rouge">gdx-backend-jogl-natives.jar</code> to libraries to hopefully remove link errors</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">MyFirstTriangle</code> class is now importing <code class="language-plaintext highlighter-rouge">com.badlogic.gdx.Gdx</code>
+</li>
+  <li>updated the <code class="language-plaintext highlighter-rouge">MyFirstTriangle_&lt;date&gt;.zip</code> source files for this guide</li>
+  <li>added screen shots</li>
+</ul>
+
+
+        <div style="border-color: #d0d7de;border-style: solid;border-width: 1px;border-radius: 6px;box-shadow: 0 1px 0 rgba(27,31,36,0.04) !important;background-color: #f6f8fa !important;padding: 8px 16px;margin-bottom: 20px;margin-top: 15px;">
+          <p style="font-size: 13px;margin-bottom: 0px !important;">
+            <b>© 2021 libGDX</b> • This wiki is a community effort. If you find information out of date or want to add some more in-depth explanations, you are very welcome to do the necessary changes. Before contributing, please take a look at our <a href="/wiki/wiki-style-guide">Wiki Style Guide</a>.
+            <br>
+            <br>
+            <b>If you need additional help, check out our community on <a href="https://libgdx.com/community/discord/" rel="external">Discord<span class="ico-ext"><i class="fas fa-external-link-alt"></i></span></a>!</b>
+          </p>
+        </div>
+      </section>
+    </div>
+
+  </article>
+</div>
+
+
+    </div>
+
+    
+  <script src="/pages/crykn/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
